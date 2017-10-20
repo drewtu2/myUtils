@@ -1,0 +1,11 @@
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[user]
+	name = Andrew Tu
+	email = drewtu2@yahoo.com
+[core]
+	editor = vim
+[push]
+	default = matching
