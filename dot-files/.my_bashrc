@@ -1,0 +1,51 @@
+# My Bashrc
+echo "Hello Beautiful"
+
+# Detect the platform (similar to $OSTYPE)
+# Anything platform specific can be started here...
+OS="`uname`"
+case $OS in
+    'Linux')
+        OS='Linux'
+        alias ls='ls --color=auto'
+        ;;
+    'FreeBSD')
+        OS='FreeBSD'
+        alias ls='ls -G'
+        ;;
+    'WindowsNT')
+        OS='Windows'
+        ;;
+    'Darwin') 
+        OS='Mac'
+        ;;
+    'SunOS')
+        OS='Solaris'
+        ;;
+     'AIX') 
+        ;;
+     *) ;;
+esac
+
+# Determine what file we're using for a startup file. 
+BASH_PROFILE=~/.bash_profile
+BASH_ALIAS=~/.bash_alias
+BASH_RC=~/.bashrc
+
+if [ -f $BASH_PROFILE ]; then
+    STARTUP=$BASH_PROFILE
+elif [ -f $BASH_ALIAS ]; then
+    STARTUP=$BASH_ALIAS
+elif [ -f $BASH_RC ]; then
+    STARTUP=$BASH_RC
+fi
+
+echo "Startup file is: $STARTUP"
+
+# Set up basic alisas 
+alias bashrc="source ~/$STARTUP"
+alias ebashrc="vim ~/$STARTUP"
+alias mybashrc="source ~/.my_bashrc"
+alias emybashrc="vim ~/.my_bashrc"
+alias sv="source venv/bin/activate"                     # Activate virtualenv. 
+
