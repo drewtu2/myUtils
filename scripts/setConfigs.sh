@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Sets up environment as follows
 # - For dot-files that do not exist within the home directory, create a soft-link
@@ -10,7 +10,7 @@
 # Determine what our startup file is we should be using....
 ##############################################################################
 BASH_PROFILE=~/.bash_profile
-BASH_ALIAS=~/.bash_alias
+BASH_ALIAS=~/.bash_aliases
 BASH_RC=~/.bashrc
 
 if [ -f $BASH_PROFILE ]; then
@@ -40,7 +40,7 @@ shopt -s dotglob                                    # Enable globbing .dotfiles
 for f in $MYUTILS_HOME/dot-files/*
 do
     filename=$(basename "$f")
-
+    echo "Operating on file: $filename"
     if [ -f ~/$filename ]; then
         echo "$filename already exists in the home directory. Skipping..."
     else
