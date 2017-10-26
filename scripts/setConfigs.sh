@@ -56,6 +56,6 @@ shopt -u dotglob                                    # Disable globbing .dotfiles
 if grep -Fxq "my_bashrc" $STARTUP; then
     echo "my_bashrc already exists in $STARTUP... "
 else
-    echo "source ~/my_bashrc" >> $STARTUP
+    echo "source ~/.my_bashrc" >> $STARTUP
     source $STARTUP 
 fi
