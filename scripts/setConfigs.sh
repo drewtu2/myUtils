@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 # Sets up environment as follows
 # - For dot-files that do not exist within the home directory, create a soft-link
@@ -40,7 +40,7 @@ shopt -s dotglob                                    # Enable globbing .dotfiles
 for f in $MYUTILS_HOME/dot-files/*
 do
     filename=$(basename "$f")
-
+    echo "Operating on file: $filename"
     if [ -f ~/$filename ]; then
         echo "$filename already exists in the home directory. Skipping..."
     else
