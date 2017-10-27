@@ -10,7 +10,7 @@
 # Determine what our startup file is we should be using....
 ##############################################################################
 BASH_PROFILE=~/.bash_profile
-BASH_ALIAS=~/.bash_alias
+BASH_ALIAS=~/.bash_aliases
 BASH_RC=~/.bashrc
 
 if [ -f $BASH_PROFILE ]; then

@@ -46,4 +46,5 @@ alias ebashrc="vim $STARTUP"
 alias mybashrc="source ~/.my_bashrc"
 alias emybashrc="vim ~/.my_bashrc"
 alias sv="source venv/bin/activate"                     # Activate virtualenv. 
+alias h="history"
 
