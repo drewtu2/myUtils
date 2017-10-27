@@ -1,5 +1,6 @@
 # My Bashrc
-echo "Hello Beautiful - myBashrc"
+#echo "Hello Beautiful - myBashrc"
+echo "Sourced myBashrc"
 
 # Detect the platform (similar to $OSTYPE)
 # Anything platform specific can be started here...
