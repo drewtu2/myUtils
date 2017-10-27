@@ -31,14 +31,29 @@ imap <F1> <C-R>=strftime("%A, %h %d, %Y")<CR>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Completion 
+" Grabbed Configs from:
+" [1] http://vim.wikia.com/wiki/VimTip1386
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 imap <S-Tab> <C-X><C-O>
-set complete=.,b,u,]
-set wildmode=longest,list:longest
-set completeopt=menu,preview        " shows a menu and, if available, any 
-                                    " additional tips such as the method 
-                                    " signature or defining file
+filetype plugin on
+set omnifunc=syntaxcomplete#Complete
+"""""""""""""""""
+"From [1]
+"""""""""""""""""
+set completeopt=longest,menuone
+" If in a completion menu, map enter key to select menu option.
+inoremap <expr> <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
 
+inoremap <expr> <C-n> pumvisible() ? '<C-n>' :
+  \ '<C-n><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
+  \ '<C-x><C-o><C-n><C-p><C-r>=pumvisible() ? "\<lt>Down>" : ""<CR>'
+
+"""""""""""""""""
+" End [1]
+"""""""""""""""""
+au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 
 
