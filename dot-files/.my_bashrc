@@ -48,3 +48,14 @@ alias emybashrc="vim ~/.my_bashrc"
 alias sv="source venv/bin/activate"                     # Activate virtualenv. 
 alias h="history"
 
+
+# Tmux Convenience Wrappers
+attach()
+{
+    tmux attach-session -t "$@";
+}
+
+list()
+{
+    tmux list-sessions;
+}
