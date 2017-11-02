@@ -14,7 +14,6 @@ elif [ -f $BASH_RC ]; then
     STARTUP=$BASH_RC
 fi
 
-
 # Load all the configurations we want from the designated system dot-files...
 for DOTFILE in `find $MYUTILS_HOME/dot-files/system`
 do  

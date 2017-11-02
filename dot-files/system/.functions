@@ -1,0 +1,15 @@
+###############################################
+# More complex functions that we may want to use
+###############################################
+
+
+# Tmux Convenience Wrappers
+attach()
+{
+    tmux attach-session -t "$@";
+}
+
+list()
+{
+    tmux list-sessions;
+}
