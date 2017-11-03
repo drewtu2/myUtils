@@ -44,7 +44,7 @@ SRCS = 	$(SRC_DIR)/wordlist.cpp
 
 SRC_INCLUDES = -I$(PROJECT_HOME)/include
 TEST_OBJS = $(TESTS:$(TEST_SRC_DIR)/%.cc=$(TEST_BUILD_DIR)/%-testobj.o)
-SRC_OBJS = $(SRCS:$(SRC_DIR)/%.cc=$(TEST_BUILD_DIR)/%-srcobj.o)
+SRC_OBJS = $(SRCS:$(SRC_DIR)/%.cpp=$(TEST_BUILD_DIR)/%-srcobj.o)
 
 CXX = g++
 
@@ -88,9 +88,10 @@ cleanall : clean
 	rm -rf ../.googletest 
 
 debug :
-	@echo $(TEST_OBJS)
-	@echo $(SRC_OBJS)
-	@echo $(GTEST_DIR)
+	@echo TEST_OBJS: $(TEST_OBJS)
+	@echo SRC_OBJS: $(SRC_OBJS)
+	@echo GTEST_DIR: $(GTEST_DIR)
+	@echo TEST_D: $(TEST_OBJS:.o=.d)
 
 googletest: 
 	./installGoogleTest.sh
@@ -150,24 +151,25 @@ $(TEST_BUILD_DIR)/%-testobj.o: $(TEST_SRC_DIR)/%.cc | build_dir googletest
 ###############################################################################
 # Autogen Dependencies 
 ###############################################################################
-#$(TEST_BUILD_DIR)/%-srcobj.d: $(SRC_DIR)/%.cc | build_dir googletest
-#	@echo "Running Autogen Source Objects..."
-#	@set -e;\
-#	rm -f $@;\
-#	$(CXX) -MM $(CXX_FLAGS) $(INCLUDES) $< > $@.$$$$;\
-#	sed 's,\($*\)\.o[ :]*,$(TEST_BUILD_DIR)/\1.o $@ : ,g' < $@.$$$$ > $@; \
-#	rm -f $@.$$$$
+$(TEST_BUILD_DIR)/%-srcobj.d: $(SRC_DIR)/%.cpp | build_dir googletest
+	@echo "Running Autogen Source Objects..."
+	@set -e;\
+		rm -f $@;\
+		$(CXX) -MM $(CPPFLAGS) $(CXXFLAGS) $(SRC_INCLUDES) $< > $@.$$$$;\
+		sed 's,\($*\)\.o[ :]*,$(TEST_BUILD_DIR)/\1.o $@ : ,g' < $@.$$$$ > $@; \
+		rm -f $@.$$$$
 
-#$(TEST_BUILD_DIR)/%-testobj.d: $(TEST_SRC_DIR)/%.cc | build_dir googletest
-#	@echo "Running Autogen for Test Objects..."
-#	@set -e;\
-#	rm -f $@;\
-#	$(CXX) -MM $(CXX_FLAGS) $(INCLUDES) $< > $@.$$$$;\
-#	sed 's,\($*\)\.o[ :]*,$(TEST_BUILD_DIR)/\1.o $@ : ,g' < $@.$$$$ > $@; \
-#	rm -f $@.$$$$
+$(TEST_BUILD_DIR)/%-testobj.d: $(TEST_SRC_DIR)/%.cc | build_dir googletest
+	@echo "Running Autogen for Test Objects..."
+	@set -e;\
+		rm -f $@;\
+		$(CXX) -MM $(CPPFLAGS) $(CXXFLAGS) $(SRC_INCLUDES) $< > $@.$$$$;\
+		sed 's,\($*\)\.o[ :]*,$(TEST_BUILD_DIR)/\1.o $@ : ,g' < $@.$$$$ > $@; \
+		rm -f $@.$$$$
 
-#-include $(TEST_OBJS:.o=.d)
-#-include $(SRC_OBJS:.o=.d)
+include $(TEST_OBJS:.o=.d)
+include $(SRC_OBJS:.o=.d)
+
 
 build_dir:
 	@echo Make build directory...
