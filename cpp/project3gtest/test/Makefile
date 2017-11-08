@@ -99,9 +99,6 @@ googletest:
 ###############################################################################
 # Build Google Test Library
 ###############################################################################
-# Can't figure out how to wildcard the gtest directory...
-#.DEFAULT : 
-#	./installGoogleTest.sh
 
 # Builds gtest.a and gtest_main.a.
 

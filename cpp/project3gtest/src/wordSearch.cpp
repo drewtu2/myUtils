@@ -2,7 +2,7 @@
 #include <string>
 #include <iostream>
 #include <chrono>
-#include <omp.h>
+//#include <omp.h>
 
 #include "wordSearch.h"
 #include "wordlist.h"
@@ -86,7 +86,7 @@ void WordSearch::findMatches()
 {
     int gridDim = givenGrid->getSize();
     //omp_set_num_threads(1);
-    std::cout << "Running with: " << omp_get_max_threads() << " threads" << std::endl;
+    //std::cout << "Running with: " << omp_get_max_threads() << " threads" << std::endl;
 #pragma omp parallel
 {
     // These variables are private for thread....
