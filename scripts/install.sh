@@ -5,6 +5,9 @@
 # back to the ones stored in $MYUTILS_HOME/dot-files
 # - Print out what files already existed (do not overwrite them)
 
+printf "\n*****************************************\n"
+printf "Beginning installation script..."
+printf "\n*****************************************\n"
 
 ##############################################################################
 # Determine what our startup file is we should be using....
@@ -20,18 +23,18 @@ elif [ -f $BASH_ALIAS ]; then
 elif [ -f $BASH_RC ]; then
     STARTUP=$BASH_RC
 fi
-echo "Startup file is: $STARTUP"
+printf "Startup file is: $STARTUP\n\n"
 
 ##############################################################################
 # Add current path to startup file if necessary...
 ##############################################################################
-if grep -Fxq "MYUTILS_HOME" $STARTUP; then
-    echo "MYUTILS already exists in $STARTUP... "
+if grep -Fq "MYUTILS_HOME" $STARTUP; then
+    printf "MYUTILS already exists in $STARTUP...\n\n"
 else
-    echo "export MYUTILS_HOME=`pwd`" >> $STARTUP
+    printf "export MYUTILS_HOME=`pwd`\n" >> $STARTUP
 fi
 
-source $STARTUP 
+source $STARTUP > /dev/null
 
 ##############################################################################
 # Create soft links to all our dot files if they don't already exist.  
@@ -40,11 +43,11 @@ shopt -s dotglob                                    # Enable globbing .dotfiles
 for f in $MYUTILS_HOME/dot-files/*
 do
     filename=$(basename "$f")
-    echo "Operating on file: $filename"
+
     if [ -f ~/$filename ]; then
-        echo "$filename already exists in the home directory. Skipping..."
-    else
-        echo "Creating soft link for $filename..."
+        printf "$filename already exists in the home directory. Skipping...\n"
+    elif [ -f "$i" ]; then                          # Make sure its a file
+        printf "Creating soft link for $filename...\n"
         ln -s $f ~/$filename
     fi 
 done
@@ -53,9 +56,13 @@ shopt -u dotglob                                    # Disable globbing .dotfiles
 ##############################################################################
 # Add our bashrc to the startup sequence
 ##############################################################################
-if grep -Fxq "my_bashrc" $STARTUP; then
-    echo "my_bashrc already exists in $STARTUP... "
+if grep -Fq "my_bashrc" $STARTUP; then
+    printf "\nmy_bashrc already exists in $STARTUP...\n"
 else
-    echo "source ~/.my_bashrc" >> $STARTUP
-    source $STARTUP 
+    printf "source ~/.my_bashrc\n" >> $STARTUP
+    source $STARTUP > /dev/null
 fi
+
+printf "\n*****************************************\n"
+printf "Finished running installation script...\n"
+printf "*****************************************\n"

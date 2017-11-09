@@ -1,0 +1,10 @@
+main
+debug/*
+release/*
+timing/*
+.googletest
+build
+*.dSYM
+myProjectTests
+
+
