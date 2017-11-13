@@ -46,7 +46,7 @@ do
 
     if [ -f ~/$filename ]; then
         printf "$filename already exists in the home directory. Skipping...\n"
-    elif [ -f "$i" ]; then                          # Make sure its a file
+    elif [ -f $f ]; then                          # Make sure its a file
         printf "Creating soft link for $filename...\n"
         ln -s $f ~/$filename
     fi 
