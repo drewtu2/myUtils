@@ -6,6 +6,7 @@ syntax on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype plugin indent on 
 set tabstop=4           " Width of a tab is 4 spaces (still interpretted as /t)
+set shiftwidth=4
 set softtabstop=4       " Sets the number of columns for a tab 
 set expandtab           " Expands tabs to spaces 
 "set smarttab
