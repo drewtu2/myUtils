@@ -20,9 +20,9 @@ folder IF another version of the config does not already exist on the system.
 - Run system check on what programs are installed (that are commonly used)
 
 ## Useful links
-[Colored print statments linux][1]
-[Markdown cheat sheet][2]
-[Docker Tutorial][3]
+- [Colored print statments linux][1]
+- [Markdown cheat sheet][2]
+- [Docker Tutorial][3]
 
 
 
