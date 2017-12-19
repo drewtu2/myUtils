@@ -22,9 +22,12 @@ folder IF another version of the config does not already exist on the system.
 ## Useful links
 [Colored print statments linux][1]
 [Markdown cheat sheet][2]
+[Docker Tutorial][3]
 
 
 
 
-[1] https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
-[2] https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[1]: https://stackoverflow.com/questions/5947742/how-to-change-the-output-color-of-echo-in-linux
+[2]: https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet
+[3]: https://docker-curriculum.com
+
