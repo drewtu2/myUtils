@@ -19,3 +19,11 @@ alias ld="ls -ld */"
 alias ..="cd .."
 alias ...="cd ../.."
 
+# Git Commands
+alias ga="git add"
+alias gph="git push"
+alias gpl="git pull"
+alias gs="git status"
+alias gc="git commit"
+alias gcm="git commit -m"
+
