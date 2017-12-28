@@ -4,9 +4,9 @@
 mylogger: basic logger configs
 
 ## Links:
-[Automate the Boring Stuff][1]
-[pyautogui][2]
-[Loggers][
+- [Automate the Boring Stuff][1]
+- [pyautogui][2]
+- [Loggers][3]
 
 [1]: https://automatetheboringstuff.com
 [2]: http://pyautogui.readthedocs.io
