@@ -19,6 +19,9 @@ alias ld="ls -ld */"
 alias ..="cd .."
 alias ...="cd ../.."
 
+# Pip
+alias freeze="pip freeze > requirements.txt"
+
 # Git Commands
 alias ga="git add"
 alias gph="git push"
