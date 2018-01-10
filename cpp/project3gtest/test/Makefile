@@ -155,6 +155,7 @@ $(TEST_BUILD_DIR)/%-srcobj.d: $(SRC_DIR)/%.cpp | build_dir googletest
 		$(CXX) -MM $(CPPFLAGS) $(CXXFLAGS) $(SRC_INCLUDES) $< > $@.$$$$;\
 		sed 's,\($*\)\.o[ :]*,$(TEST_BUILD_DIR)/\1.o $@ : ,g' < $@.$$$$ > $@; \
 		rm -f $@.$$$$
+	@echo "Finished Autogen Source Objects..."
 
 $(TEST_BUILD_DIR)/%-testobj.d: $(TEST_SRC_DIR)/%.cc | build_dir googletest
 	@echo "Running Autogen for Test Objects..."
@@ -163,6 +164,7 @@ $(TEST_BUILD_DIR)/%-testobj.d: $(TEST_SRC_DIR)/%.cc | build_dir googletest
 		$(CXX) -MM $(CPPFLAGS) $(CXXFLAGS) $(SRC_INCLUDES) $< > $@.$$$$;\
 		sed 's,\($*\)\.o[ :]*,$(TEST_BUILD_DIR)/\1.o $@ : ,g' < $@.$$$$ > $@; \
 		rm -f $@.$$$$
+	@echo "Finished Autogen Test Objects..."
 
 include $(TEST_OBJS:.o=.d)
 include $(SRC_OBJS:.o=.d)

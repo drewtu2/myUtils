@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Some colors for fancy prints
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+NC='\033[0m' # No Color
+
+
 # Sets up environment as follows
 # - For dot-files that do not exist within the home directory, create a soft-link
 # back to the ones stored in $MYUTILS_HOME/dot-files
@@ -45,9 +51,9 @@ do
     filename=$(basename "$f")
 
     if [ -f ~/$filename ]; then
-        printf "$filename already exists in the home directory. Skipping...\n"
+        printf "${RED}[ NOT OK ] \t$filename already exists in the home directory. Skipping...${NC}\n"
     elif [ -f $f ]; then                          # Make sure its a file
-        printf "Creating soft link for $filename...\n"
+        printf "${GREEN}[   OK   ] \t$filename does not exist. Creating soft link...${NC}\n"
         ln -s $f ~/$filename
     fi 
 done
