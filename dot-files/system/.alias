@@ -8,6 +8,9 @@ alias ebashrc="vim $STARTUP"
 alias mybashrc="source ~/.my_bashrc"
 alias emybashrc="vim ~/.my_bashrc"
 
+alias lbashrc="source ~/.l_bashrc"
+alias elbashrc="vim  ~/.l_bashrc"
+
 alias sv="source venv/bin/activate"                     # Activate virtualenv.
 
 # Basic System Commands

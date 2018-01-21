@@ -6,10 +6,21 @@
 # Tmux Convenience Wrappers
 attach()
 {
+    # Attaches to a given tmux session
     tmux attach-session -t "$@";
 }
 
 list()
 {
+    # Prints the current active tmux sessions
     tmux list-sessions;
+}
+
+wiki()
+{
+    # Opens the Wikipedia Article of a given query
+    raw="$@"
+    query=${raw// /_};
+
+    open -a safari https://wikipedia.org/wiki/"$query";
 }

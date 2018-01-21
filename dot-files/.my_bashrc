@@ -19,3 +19,5 @@ for DOTFILE in `find $MYUTILS_HOME/dot-files/system`
 do  
     [ -f "$DOTFILE" ] && source "$DOTFILE" #&& echo "Found file: $DOTFILE"
 done
+
+source ~/.l_bashrc
