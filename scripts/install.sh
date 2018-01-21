@@ -59,6 +59,8 @@ do
 done
 shopt -u dotglob                                    # Disable globbing .dotfiles
 
+touch ~/.l_bashrc
+
 ##############################################################################
 # Add our bashrc to the startup sequence
 ##############################################################################
