@@ -1,5 +1,6 @@
 # My Bashrc
-echo "Hello Beautiful - myBashrc"
+#echo "Hello Beautiful - myBashrc"
+echo "Sourced myBashrc"
 
 # Determine what file we're using for a startup file. 
 BASH_PROFILE=~/.bash_profile
