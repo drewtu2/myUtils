@@ -1,5 +1,6 @@
 # My Bashrc
-echo "Hello Beautiful - myBashrc"
+#echo "Hello Beautiful - myBashrc"
+echo "Sourced myBashrc"
 
 # Determine what file we're using for a startup file. 
 BASH_PROFILE=~/.bash_profile
@@ -19,3 +20,5 @@ for DOTFILE in `find $MYUTILS_HOME/dot-files/system`
 do  
     [ -f "$DOTFILE" ] && source "$DOTFILE" #&& echo "Found file: $DOTFILE"
 done
+
+source ~/.l_bashrc
