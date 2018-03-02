@@ -22,7 +22,7 @@ set nu
 " Highlight search results (including incomplete seraches)
 set hlsearch  
 set incsearch
-nnoremap <esc> :noh<return><esc>
+"nnoremap <esc> :noh<return><esc>
 
 
 
