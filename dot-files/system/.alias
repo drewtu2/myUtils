@@ -7,6 +7,7 @@ alias ebashrc="vim $STARTUP"
 
 alias mybashrc="source ~/.my_bashrc"
 alias emybashrc="vim ~/.my_bashrc"
+alias ealias="vim $MYUTILS_HOME/dot-files/system/.alias"
 
 alias lbashrc="source ~/.l_bashrc"
 alias elbashrc="vim  ~/.l_bashrc"
