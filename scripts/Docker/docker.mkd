@@ -1,0 +1,51 @@
+# About Docker [1]
+Docker is a tool that allows developers, syst-admins, etc. to easily depoloy 
+their applications in a sandbox (called containers) to run on the host operating 
+system (i.e. Linux). 
+
+The key benefit of Docker is that it allows uers to package an application with 
+all of its dependencies into a standardized unit for deployment. Better than 
+virtual machines because they have a smaller deployment overhead. Think virtualenv 
+at the OS level 
+
+## VM vs Container
+- VMs run an OS on virtual hardware powered by the server's host OS. 
+- Full process isolation for applicaitons, i.e. there are very few ways that 
+the host OS can affect the software in the guest OS and vice versa. 
+- VMs are expensive since the entire hardare stack needs to be virtualized. 
+- Containers don't virtualize all of the hardware - instead they use the 
+existing hardware and low level mechanics of the Host OS to run the guest OS. 
+Provides the majority of the isloation properties at a fraction of the overhead
+cost. 
+
+## Usage
+`docker images`                 lists all the images installed
+`docker run <image_name>`       runs the specified image
+`docker run <image_name> <cmd>`  can run specific commands from "inside" the container 
+
+Run with the `-it` flag to start in interactive tty in the container (i.e. using
+the terminal like a complete OS)
+
+Docker creates a new container everytime its run so changes to the os DO NOT 
+persist between runs
+
+## Terminology
+- _images_: the blueprints that containers are built off of. 
+- _containers_: created based on a docker image. responsible for actually "running" 
+the applications 
+- _docker daemon_: the background service running on the host that manages building,
+running, and distributing the Docker containers. The daemon runs in the host OS. 
+The client talks to the daemon. 
+- _docker client_: the CLI that allows the user to interact with the daemon. 
+- _docker hub_: a repo of docker images that can be pulled and hosted. 
+
+## Docker Images
+- Can pull specfic images from the docker hub. 
+- Images are compariable to files being tracked by github with specific versions 
+having defined TAGs and being identifed by a unique id. 
+- images can be inherited (think OOD inheritance) with base and child images
+- On docker hub, there are two types of images that can be downloaded
+  - official images: images officialy maintained and supported by docker
+  - user images: images submitted to the repo for the common user. 
+
+[1] https://docker-curriculum.com
