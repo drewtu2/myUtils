@@ -1,0 +1,3 @@
+Some stuff for doing fourier transforms using some starter code from class
+
+who knows if this might be useful in the future... 
