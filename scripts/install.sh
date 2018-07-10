@@ -44,7 +44,7 @@ fi
 #source $STARTUP > /dev/null
 printf "Sourcing startup file... \n"
 #source $STARTUP 
-export MYUTILS_HOME=pwd # source the startup script wasn't having the changes take effect...
+export MYUTILS_HOME=$(pwd) # source the startup script wasn't having the changes take effect...
 printf "MYUTILS_HOME: $MYUTILS_HOME \n"
 
 ##############################################################################
