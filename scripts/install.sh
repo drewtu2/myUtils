@@ -37,10 +37,15 @@ printf "Startup file is: $STARTUP\n\n"
 if grep -Fq "MYUTILS_HOME" $STARTUP; then
     printf "MYUTILS already exists in $STARTUP...\n\n"
 else
+    printf "Adding MYUTILS_HOME shortcut... \n" 
     printf "export MYUTILS_HOME=`pwd`\n" >> $STARTUP
 fi
 
-source $STARTUP > /dev/null
+#source $STARTUP > /dev/null
+printf "Sourcing startup file... \n"
+#source $STARTUP 
+export MYUTILS_HOME=pwd # source the startup script wasn't having the changes take effect...
+printf "MYUTILS_HOME: $MYUTILS_HOME \n"
 
 ##############################################################################
 # Create soft links to all our dot files if they don't already exist.  
@@ -49,10 +54,11 @@ shopt -s dotglob                                    # Enable globbing .dotfiles
 for f in $MYUTILS_HOME/dot-files/*
 do
     filename=$(basename "$f")
+    #printf "$filename \n"
 
-    if [ -f ~/$filename ]; then
+    if [ -f "~/$filename" ]; then
         printf "${RED}[ NOT OK ] \t$filename already exists in the home directory. Skipping...${NC}\n"
-    elif [ -f $f ]; then                          # Make sure its a file
+    elif [ -f "$f" ]; then                          # Make sure its a file
         printf "${GREEN}[   OK   ] \t$filename does not exist. Creating soft link...${NC}\n"
         ln -s $f ~/$filename
     fi 
