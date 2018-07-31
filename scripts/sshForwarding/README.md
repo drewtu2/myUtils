@@ -47,13 +47,13 @@ Restart SSH
 
 ## Connecting
 1. From the protected machine: `ssh -nNT -R rp:localhost:22 user@external.com`
-- `-nNT` supresses output and does not create a TTY instance to the remote machine. 
-Ideal for running as a background task. 
-- rp should be whatever port the remote host will be listening on to forward to 
-the ssh port. This is the port we will eventualy use to connect to the machine. 
-- For SSH default, we need to connect to localhost:22 because that is where the 
-SSH server is running. If we change where it's running, we will need to change the
-port here too. 
+  - `-nNT` supresses output and does not create a TTY instance to the remote machine. 
+  Ideal for running as a background task. 
+  - rp should be whatever port the remote host will be listening on to forward to 
+  the ssh port. This is the port we will eventualy use to connect to the machine. 
+  - For SSH default, we need to connect to localhost:22 because that is where the 
+  SSH server is running. If we change where it's running, we will need to change the
+  port here too. 
 2. SSH from the outside machine into the middle man. 
 `ssh user@external`
 3. From the middle man, we can now attempt to connect back to the Protected Machine. 
@@ -63,4 +63,10 @@ port here too.
 Add the ssh connection from protected machine to external server to `/etc/rc.local`
 to initiate the connection at startup. 
 
-
+# Setup for MIDAS
+1. Add SSH Key to AWS Instance - Needs to be done from the AWS instance. 
+2. Edit `/etc/ssh/sshd_config`
+  - 2.a -> Make sure the ssh server is installed... `systemctl restart ssh; systemctl status ssh`
+  - 2.b -> If not, install: `sudo apt-get install openssh-server`
+3. From remote machine, setup the connection to AWS.
+   - `ssh -nNT -R 5900:localhost:22 ubuntu@ec2-18-206-158-242.compute-1.amazonaws.com`
