@@ -1,6 +1,7 @@
 from PIL import Image
 from PIL.ExifTags import TAGS, GPSTAGS
 import glob
+from map_plot import StaticMapBuilder
 
 def get_exif_data(image):
     """
@@ -91,14 +92,14 @@ def append_to_url(base, imagePath, gps):
     map_url = "%s%s" %(base, entry)
     return map_url
 
-def process_file(baseUrl, fileName):
+def process_file(builder, file_name):
     """
     Handle the processing for a single file. 
     """
     hasExif = 0;
     hasGps = 0;
 
-    image = Image.open(fileName)
+    image = Image.open(file_name)
     exif_data = get_exif_data(image)
 
     if exif_data:
@@ -109,34 +110,33 @@ def process_file(baseUrl, fileName):
     if gps and all(gps):
         print("%s: %f, %f" % (fileName, gps[0], gps[1]))
         hasGps = 1;
-        return (append_to_url(baseUrl, fileName, gps), hasExif, hasGps)
-    else:
-        return (baseUrl, hasExif, hasGps)
+        builder.addPoint(gps[0], gps[1], file_name)
+
+    return (builder, hasExif, hasGps)
 
 
 ################
 # Example ######
 ################
 if __name__ == "__main__":
-    
-    zoom = 2
-    map_url = "http://staticmap.openstreetmap.de/staticmap.php?&zoom=%d&size=865x512&maptype=mapnik&markers=" % (zoom)
 
     numFiles = 0;
     numExif = 0;
     numGps = 0;
 
+    mapBuilder = StaticMapBuilder()
+
     # Iterate through every fil in the current folder.
     for fileName in glob.glob("*.jpg"):
         print("Trying %s..." % fileName)
-        response = process_file(map_url, fileName)
-        map_url = response[0]
+        response = process_file(mapBuilder, fileName)
+        mapBuilder = response[0]
 
         numFiles += 1
         numExif += response[1]
         numGps += response[2]
 
     # Remove the last "|" from the url
-    map_url = map_url[:-1]
+    map_url = mapBuilder.build()
     print("Total Files: %d | Num w/ Exif %d | Num w/ GPS %d" % (numFiles, numExif, numGps))
     print(map_url)
