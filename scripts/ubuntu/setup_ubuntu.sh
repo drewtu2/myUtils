@@ -9,6 +9,7 @@ sudo apt-get upgrade
 sudo apt-get install vim
 sudo apt-get install tmux
 sudo apt-get install python3
+sudo apt-get install python3-venv
 
 # Install git and then clone the utils repo
 # If this script is running, this has already been done...
