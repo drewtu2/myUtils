@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Just update the OS related stuff.
-sudo apt-get upgrade-dist
+sudo apt-get dist-upgrade
 sudo apt-get update
 sudo apt-get upgrade
 
