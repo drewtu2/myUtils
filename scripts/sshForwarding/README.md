@@ -64,9 +64,10 @@ Add the ssh connection from protected machine to external server to `/etc/rc.loc
 to initiate the connection at startup. 
 
 # Setup for MIDAS
-1. Add SSH Key to AWS Instance - Needs to be done from the AWS instance. 
+1. Add SSH Key to Instance (AWS or GoogleCloud) - Needs to be done from the protected  
+instance. 
 2. Edit `/etc/ssh/sshd_config`
   - 2.a -> Make sure the ssh server is installed... `systemctl restart ssh; systemctl status ssh`
   - 2.b -> If not, install: `sudo apt-get install openssh-server`
-3. From remote machine, setup the connection to AWS.
-   - `ssh -nNT -R 5900:localhost:22 ubuntu@ec2-18-206-158-242.compute-1.amazonaws.com`
+3. From protected machine, setup the connection to GoogleCloud.
+   - `ssh -nNT -R 5900:localhost:22 Andrew@35.231.130.218`
