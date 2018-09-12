@@ -35,15 +35,6 @@ accessible to both machines to serve as the middle man and broker a connection.
 In this instance, I set up an AWS EC2 instance to serve as the external server
 accessible to both machines. 
 
-## Setup 
-Edit the sshd_config file on the Protected Machine to allow remote hosts to forwarded ports. 
-`$ sudo vim /etc/ssh/sshd_config`
-
-Add (or uncomment or change) 
-`GatewayPorts yes`
-
-Restart SSH
-`$ sudo service ssh restart`
 
 ## Connecting
 1. From the protected machine: `ssh -nNT -R rp:localhost:22 user@external.com`
@@ -63,11 +54,47 @@ Restart SSH
 Add the ssh connection from protected machine to external server to `/etc/rc.local`
 to initiate the connection at startup. 
 
-# Setup for MIDAS
-1. Add SSH Key to Instance (AWS or GoogleCloud) - Needs to be done from the protected  
-instance. 
-2. Edit `/etc/ssh/sshd_config`
-  - 2.a -> Make sure the ssh server is installed... `systemctl restart ssh; systemctl status ssh`
-  - 2.b -> If not, install: `sudo apt-get install openssh-server`
-3. From protected machine, setup the connection to GoogleCloud.
-   - `ssh -nNT -R 5900:localhost:22 Andrew@35.231.130.218`
+# Setup for Protected Machine 
+0. Make sure ssh server is installed...
+  - `systemctl restart ssh; systemctl status ssh` - should return error if not installed
+  - If not installed, run: `sudo apt-get install openssh-server`
+1. Add SSH Public Key to external server (AWS or GoogleCloud) instance. 
+  - If Key Doesn't exist
+    ```
+    ssh-keygen -t rsa -b 4096 -C "drewtu2@yahoo.com"
+    ```
+    Keep hitting enter/yes until you get back to the normal screen
+  - Once Key Exists
+    ```
+    sudo apt-get install xclip              # Installs xclip
+    xclip -sel clip < ~/.ssh/id_rsa.pub     # Copys id_rsa.pub contents to paste buffer
+    ```
+
+2. Edit `/etc/ssh/sshd_config` to allow remote hosts to forwarded ports
+    ```
+    sudo echo GatewayPorts yes >> /etc/ssh/sshd_config
+    echo ServerAliveInterval 120 >> ~/.ssh/config
+    ```
+    also add a server alive interval to prevent connection timeouts
+3. Restart SSH
+    - `$ sudo service ssh restart`
+4. From protected machine, setup the connection to GoogleCloud.
+    - `ssh -nNT -R 5900:localhost:22 drewtu2@35.231.130.218 &`
+
+5. Add to Crontab to boot on startup
+```
+crontab -e
+```
+This will open a window where you can add commands. Type the following and save
+```
+@reboot $MYUTILS_HOME/scrips/sshforwarding/connectToExternal.sh
+```
+
+# Setup of External Server (middle man)
+
+Prevent the ssh connection from timing out from the server side by sending null
+packets every 120 seconds
+```
+sudo echo ClientAliveInterval 120 >> /etc/ssh/sshd_config
+#sudo echo ClientAliveCountMax 720 >> /etc/ssh/sshd_config
+```
