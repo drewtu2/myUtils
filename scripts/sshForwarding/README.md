@@ -89,6 +89,11 @@ This will open a window where you can add commands. Type the following and save
 ```
 @reboot $MYUTILS_HOME/scrips/sshforwarding/connectToExternal.sh
 ```
+6. Add Client Side Keep Alive
+```
+echo ServerAliveInterval 120 >> /etc/ssh/sshd_config
+#echo ServerAliveCountMax 720 >> /etc/ssh/sshd_config
+```
 
 # Setup of External Server (middle man)
 
