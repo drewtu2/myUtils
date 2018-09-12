@@ -73,27 +73,25 @@ to initiate the connection at startup.
 2. Edit `/etc/ssh/sshd_config` to allow remote hosts to forwarded ports
     ```
     sudo echo GatewayPorts yes >> /etc/ssh/sshd_config
-    echo ServerAliveInterval 120 >> ~/.ssh/config
     ```
-    also add a server alive interval to prevent connection timeouts
 3. Restart SSH
     - `$ sudo service ssh restart`
 4. From protected machine, setup the connection to GoogleCloud.
     - `ssh -nNT -R 5900:localhost:22 drewtu2@35.231.130.218 &`
 
 5. Add to Crontab to boot on startup
-```
-crontab -e
-```
-This will open a window where you can add commands. Type the following and save
-```
-@reboot $MYUTILS_HOME/scrips/sshforwarding/connectToExternal.sh
-```
+  ```
+  crontab -e
+  ```
+  This will open a window where you can add commands. Type the following and save
+  ```
+  @reboot $MYUTILS_HOME/scrips/sshforwarding/connectToExternal.sh
+  ```
 6. Add Client Side Keep Alive
-```
-echo ServerAliveInterval 120 >> /etc/ssh/sshd_config
-#echo ServerAliveCountMax 720 >> /etc/ssh/sshd_config
-```
+  ```
+  echo ServerAliveInterval 120 >> /etc/ssh/sshd_config
+  #echo ServerAliveCountMax 720 >> /etc/ssh/sshd_config
+  ```
 
 # Setup of External Server (middle man)
 
