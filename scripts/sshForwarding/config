@@ -1,0 +1,9 @@
+# Keep alive from the client side
+ServerAliveInterval 120
+ServerAliveCountMax 720
+
+Host mercury
+    HostName 35.231.130.218
+    User drewtu2
+
+
