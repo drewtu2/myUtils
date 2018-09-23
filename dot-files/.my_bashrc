@@ -21,4 +21,8 @@ do
     [ -f "$DOTFILE" ] && source "$DOTFILE" #&& echo "Found file: $DOTFILE"
 done
 
+get_os()    # Sets $OS with the type of OS we're running. 
+
+# l_bashrc is stuff we only want to run on this computer and not add into the
+# global repo
 source ~/.l_bashrc
