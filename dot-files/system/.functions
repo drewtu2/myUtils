@@ -2,7 +2,7 @@
 # More complex functions that we may want to use
 ###############################################
 
-printf "Loaded fuctions"
+# printf "Loaded fuctions\n"
 ###############################################
 # Fancy printing 
 ###############################################
@@ -58,8 +58,6 @@ make_ssh_key()
 copy_ssh_key()
 {
     # Copies the id_rsa.pub to the keyboard
-    get_os()
-
     if [ "$(OS)" == "Mac" ]; then
         cat ~/.ssh/id_rsa.pub | pbcopy
     elif [ "$(OS)" == "Linux" ]; then
@@ -104,20 +102,10 @@ run_cmd() {
     fi
 }
 
-get_os() {
-    # Sets the environment variable $OS to be the type of OS running. 
-    # Possible values are Mac, Linux, and Windows
-    if [ "$(uname)" == "Darwin" ]; then
-        # Do something under Mac OS X platform        
-        export OS="Mac"
-    elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-        # Do something under GNU/Linux platform
-        export OS="Linux"
-    elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW32_NT" ]; then
-        # Do something under 32 bits Windows NT platform
-        export OS="Windows"
-    elif [ "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT" ]; then
-        # Do something under 64 bits Windows NT platform
-        export OS="Windows"
-    fi
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+function tre() {
+    tree -aC -I '.git|.gitmodules|venv' --dirsfirst "$@" | less -FRNX;
 }
