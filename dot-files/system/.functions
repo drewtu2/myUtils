@@ -2,8 +2,38 @@
 # More complex functions that we may want to use
 ###############################################
 
+# printf "Loaded fuctions\n"
+###############################################
+# Fancy printing 
+###############################################
+# Some colors for fancy prints
+RED='\033[0;31m'        # Red
+GREEN='\033[0;32m'      # Green
+NC='\033[0m'            # No Color
 
+print_divider() {
+    # Prints 40 *'s to be used as a divider
+    printf "\n****************************************\n"
+}
+
+print_header() {
+    # Prints a header between two dividers. 
+    # $1: The string to be printed
+    print_divider
+    printf "$1"
+    print_divider
+}
+
+print_color() {
+    # Prints a given string in a given color
+    # $1: The string to be printed
+    # $2: The given color
+    printf "${2}${1}${NC}"
+}
+
+###############################################
 # Tmux Convenience Wrappers
+###############################################
 attach()
 {
     # Attaches to a given tmux session
@@ -16,6 +46,30 @@ list()
     tmux list-sessions;
 }
 
+###############################################
+# SSH Setup 
+###############################################
+make_ssh_key()
+{
+    # Convenience function for generating an ssh key
+    sh-keygen -t rsa -b 4096 -C "$(whoami):$(hostname)"
+}
+
+copy_ssh_key()
+{
+    # Copies the id_rsa.pub to the keyboard
+    if [ "$(OS)" == "Mac" ]; then
+        cat ~/.ssh/id_rsa.pub | pbcopy
+    elif [ "$(OS)" == "Linux" ]; then
+        cat ~/.ssh/id_rsa.pub | xclip
+    elif [ "$(OS)" == "Windows" ]; then
+        cat ~/.ssh/id_rsa.pub | clip
+    fi
+} 
+
+###############################################
+# Other 
+###############################################
 wiki()
 {
     # Opens the Wikipedia Article of a given query
@@ -23,4 +77,35 @@ wiki()
     query=${raw// /_};
 
     open -a safari https://wikipedia.org/wiki/"$query";
+}
+
+ensure_directory() {
+    # Make sure we're running this from the correct directory
+    # $1: The directory we should be running this from
+    if [ $(basename $(pwd)) != $1 ]
+    then
+        print_color "\n[ERROR]: Run in ${1}\n" ${RED}
+        exit 1
+    else
+        print_color "\n[SUCCESS]: Correct directory... beginning setup\n" ${GREEN}
+    fi
+}
+
+run_cmd() {
+    # Runs a command given as a string. Prints whether or not the command succeeds
+    # or fails
+    $1
+    if [ $? -eq 0 ]; then
+        print_color "\nRunning $1 OK\n" ${GREEN}
+    else
+        print_color "\nRunning $1 FAIL\n" ${RED}
+    fi
+}
+
+# `tre` is a shorthand for `tree` with hidden files and color enabled, ignoring
+# the `.git` directory, listing directories first. The output gets piped into
+# `less` with options to preserve color and line numbers, unless the output is
+# small enough for one screen.
+function tre() {
+    tree -aC -I '.git|.gitmodules|venv' --dirsfirst "$@" | less -FRNX;
 }

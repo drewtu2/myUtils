@@ -22,6 +22,7 @@ alias ld="ls -ld */"
 # Moving Directories
 alias ..="cd .."
 alias ...="cd ../.."
+alias ....="cd ../../.."
 
 # Pip
 alias freeze="pip freeze > requirements.txt"
@@ -34,3 +35,10 @@ alias gs="git status"
 alias gc="git commit"
 alias gcm="git commit -m"
 
+# ROS commands
+alias scw="source devel/setup.bash; echo $ROS_PACKAGE_PATH"
+alias cw="echo $ROS_PACKAGE_PATH"
+
+## One day, I hope to be able to use this. http://xkcd.com/530/
+alias stfu="osascript -e 'set volume output muted true'"
+alias pumpitup="osascript -e 'set volume output volume 100'"

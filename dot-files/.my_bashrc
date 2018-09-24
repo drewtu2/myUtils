@@ -21,4 +21,6 @@ do
     [ -f "$DOTFILE" ] && source "$DOTFILE" #&& echo "Found file: $DOTFILE"
 done
 
-source ~/.l_bashrc
+# l_bashrc is stuff we only want to run on this computer and not add into the
+# global repo
+source ${HOME}/.l_bashrc

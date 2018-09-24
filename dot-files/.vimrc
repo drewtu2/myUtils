@@ -60,4 +60,7 @@ inoremap <expr> <M-,> pumvisible() ? '<C-n>' :
 au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 
-
+"""
+" Map F3 to toggle paste mode. Paste mode prevents autoindent
+"""
+set pastetoggle=<F3>
