@@ -29,3 +29,6 @@ gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshel
 # Usefull for gnome-open
 # gnome-open will open files with the appropriate software
 sudo apt-get install -qq libgnome2-bin
+
+# Get ctags generator
+sudo apt-get install -qq exuberant-ctags
