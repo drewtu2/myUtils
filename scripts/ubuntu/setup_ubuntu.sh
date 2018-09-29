@@ -12,6 +12,7 @@ sudo apt-get install -qq tmux
 # Install and update python
 sudo apt-get install -qq python3
 sudo apt-get install -qq python3-venv
+sudo apt-get install -qq python3-tk
 pip install --upgrade pip
 pip3 install --upgrade pip
 
@@ -20,6 +21,11 @@ pip3 install --upgrade pip
 #sudo apt-get install git
 #git clone https://www.github.com/drewtu2/myUtils.git
 
+# Autohide the launcher
+# https://askubuntu.com/questions/274153/command-line-for-hiding-and-unhiding-unity-panel
+gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 1
+# Un-Autohide the launcher
+# gsettings set org.compiz.unityshell:/org/compiz/profiles/unity/plugins/unityshell/ launcher-hide-mode 0
 # Usefull for gnome-open
 # gnome-open will open files with the appropriate software
 sudo apt-get install -qq libgnome2-bin
