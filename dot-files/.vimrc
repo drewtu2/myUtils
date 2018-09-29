@@ -8,11 +8,16 @@ filetype plugin indent on
 set tabstop=4           " Width of a tab is 4 spaces (still interpretted as /t)
 set shiftwidth=4
 set softtabstop=4       " Sets the number of columns for a tab 
+
+set cindent
+set cinoptions=g.5s,h.5s
+
 set expandtab           " Expands tabs to spaces 
+
 "set smarttab
 
 " Color Line 80 (helps keep consistent lines) 
-set cc=80       
+set cc=100
 " Turn on Numbered Lines
 set nu         
 
@@ -64,3 +69,8 @@ au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 " Map F3 to toggle paste mode. Paste mode prevents autoindent
 """
 set pastetoggle=<F3>
+
+
+" Set the filetype based on the file's extension, overriding any
+" " 'filetype' that has already been set
+au BufRead,BufNewFile *.launch set filetype=xml
