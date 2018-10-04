@@ -87,6 +87,8 @@ to initiate the connection at startup.
   ```
   @reboot $MYUTILS_HOME/scrips/sshforwarding/connectToExternal.sh
   ```
+  **TODO: This environment variable is not set at cronjob... need to set**
+
 6. Add Client Side Keep Alive
   ```
   echo ServerAliveInterval 120 >> /etc/ssh/sshd_config
