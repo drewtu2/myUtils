@@ -58,11 +58,11 @@ make_ssh_key()
 copy_ssh_key()
 {
     # Copies the id_rsa.pub to the keyboard
-    if [ "$(OS)" == "Mac" ]; then
+    if [ "$OS" = "Mac" ]; then
         cat ~/.ssh/id_rsa.pub | pbcopy
-    elif [ "$(OS)" == "Linux" ]; then
+    elif [ "$OS" = "Linux" ]; then
         cat ~/.ssh/id_rsa.pub | xclip
-    elif [ "$(OS)" == "Windows" ]; then
+    elif [ "$OS" = "Windows" ]; then
         cat ~/.ssh/id_rsa.pub | clip
     fi
 } 

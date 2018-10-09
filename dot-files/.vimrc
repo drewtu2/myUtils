@@ -1,5 +1,7 @@
 " Turn on syntax highlighting, overwrite with default color scheme
 syntax on
+set nocompatible
+filetype plugin on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Tab Expansion 
@@ -9,15 +11,16 @@ set tabstop=4           " Width of a tab is 4 spaces (still interpretted as /t)
 set shiftwidth=4
 set softtabstop=4       " Sets the number of columns for a tab 
 
+" If this is a C(++) file, use c++ indents
 set cindent
-set cinoptions=g.5s,h.5s
+set cinoptions=g.5s,h.5s "Only indent 2 spaces for the scopes. 
 
 set expandtab           " Expands tabs to spaces 
 
 "set smarttab
 
 " Color Line 80 (helps keep consistent lines) 
-set cc=100
+set cc=80
 " Turn on Numbered Lines
 set nu         
 
@@ -73,4 +76,9 @@ set pastetoggle=<F3>
 
 " Set the filetype based on the file's extension, overriding any
 " " 'filetype' that has already been set
-au BufRead,BufNewFile *.launch set filetype=xml
+au BufRead,BufNewFile *.launch,*.test set filetype=xml
+
+" Fuzzy file searching
+" use :find <regex> and then tab through options
+set path+=**
+set wildmenu
