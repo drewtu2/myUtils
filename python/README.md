@@ -2,6 +2,10 @@
 
 ## Files
 mylogger: basic logger configs
+Exif2Map: plots the location of all pictures to a static map based on exif meta data
+GoProCalibration: determine camera calibration for GoPro images
+blur_detection: detect blurry images
+translator: translate Chinese documents to english using google translate
 
 ## Links:
 - [Automate the Boring Stuff][1]
