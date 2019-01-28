@@ -1,0 +1,291 @@
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:47:* System timer beat interrupted
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:48:* Beat: 1ms
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:83:* Get the total number of milliseconds accumulated
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:84:* Unit: ms
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:94:* Get the total number of microseconds accumulated
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:95:* Unit: us
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:118:* Uninterruptible delay function
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:119:* Delay unit: ms
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:128:* Interruptible delay function
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:129:* Delay unit: ms
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:153:* Read ADC sample value function
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:161:* Waiting for the ADC sample completion function
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:170:* Get the chip temperature function
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:171:* Reserved
+infra_pub/arch/infra_stm32/32f10x/softdelay.c:41:* Microsecond delay correction function
+infra_pub/arch/infra_stm32/32f10x/softdelay.c:55:* Microsecond delay function
+infra_pub/arch/infra_stm32/32f10x/usart.c:35:* Serial port buffer definition
+infra_pub/arch/infra_stm32/32f10x/usart.c:50:* Serial port receive callback function definition
+infra_pub/arch/infra_stm32/32f10x/usart.c:64:* Serial port receive ring buffer definition
+infra_pub/arch/infra_stm32/32f10x/usart.c:86:* Get the serial port number function
+infra_pub/arch/infra_stm32/32f10x/usart.c:103:* Get the serial buffer index function
+infra_pub/arch/infra_stm32/32f10x/usart.c:127:* Get serial DMA channel function
+infra_pub/arch/infra_stm32/32f10x/usart.c:150:* Serial port send wait for inline function
+infra_pub/arch/infra_stm32/32f10x/usart.c:188:* Serial port shutdown function
+infra_pub/arch/infra_stm32/32f10x/usart.c:189:* Release the serial port and the bound DMA channel
+infra_pub/arch/infra_stm32/32f10x/usart.c:208:* Serial open function
+infra_pub/arch/infra_stm32/32f10x/usart.c:209:* Bind DMA channel for sending
+infra_pub/arch/infra_stm32/32f10x/usart.c:262:* Serial port send wait function
+infra_pub/arch/infra_stm32/32f10x/usart.c:273:* Serial port send data setting function
+infra_pub/arch/infra_stm32/32f10x/usart.c:295:* Serial port send data function
+infra_pub/arch/infra_stm32/32f10x/usart.c:296:* Send all the data in the serial port send buffer
+infra_pub/arch/infra_stm32/32f10x/usart.c:315:* Serial port send function
+infra_pub/arch/infra_stm32/32f10x/usart.c:327:* Serial port sends a single character function
+infra_pub/arch/infra_stm32/32f10x/usart.c:334:* Serial port clear receive buffer function
+infra_pub/arch/infra_stm32/32f10x/usart.c:346:* Does the serial port have a receive data decision function?
+infra_pub/arch/infra_stm32/32f10x/usart.c:358:* Serial port receive data function
+infra_pub/arch/infra_stm32/32f10x/usart.c:372:* Serial port reception to obtain a single character function
+infra_pub/arch/infra_stm32/32f10x/usart.c:389:* Set the serial port interrupt receive callback function
+infra_pub/arch/infra_stm32/32f10x/usart.c:400:* Get the serial port interrupt receiving callback function
+infra_pub/arch/infra_stm32/32f10x/usart.c:442:* Default serial port interrupt receiving callback function
+sdp_mini/src/boarddef.h:35://Serial port send buffer size
+sdp_mini/src/bump_monitor.c:47:* Leave the blocking state function
+sdp_mini/src/bump_monitor.c:54:* Enter the blocking state function
+sdp_mini/src/bump_monitor.c:61://Emergency stop when entering the blockage
+sdp_mini/src/bump_monitor.c:65:* Blocking state initialization function
+sdp_mini/src/bump_monitor.c:77:* Collision detection processing function
+sdp_mini/src/bump_monitor.c:91:* Set the validity judgment function of speed
+sdp_mini/src/bump_monitor.c:92:* Specifically based on the current collision state
+sdp_mini/src/drv/battery.c:36://Unit: ms
+sdp_mini/src/drv/battery.c:37://Unit: ms
+sdp_mini/src/drv/battery.c:60:* Battery capacity ADC detection initialization function
+sdp_mini/src/drv/battery.c:72:* Get battery voltage function
+sdp_mini/src/drv/battery.c:73:* Return voltage value, unit: mV
+sdp_mini/src/drv/battery.c:85:* Get battery capacity percentage function
+sdp_mini/src/drv/battery.c:86:* Return percentage 0-100%
+sdp_mini/src/drv/battery.c:93:* Battery charge level detection initialization function
+sdp_mini/src/drv/battery.c:120:* Battery charge status detection function
+sdp_mini/src/drv/battery.c:121:* Returning is charging or not charging
+sdp_mini/src/drv/battery.c:132:* Get battery DC power plug charge status function
+sdp_mini/src/drv/battery.c:139:* Get battery charging post charging status function
+sdp_mini/src/drv/battery.c:210:* Battery related initialization function
+sdp_mini/src/drv/battery.c:211:* Initialize battery capacity detection
+sdp_mini/src/drv/battery.c:212:* Initialize battery charge detection
+sdp_mini/src/drv/battery.c:220:* Battery related module function
+sdp_mini/src/drv/battery.c:221:* Determination of state of charge, etc.
+sdp_mini/src/drv/battery.c:243://Detect battery capacity and calculate percentage
+sdp_mini/src/drv/battery.c:262://Is it in the charging pile charging state?
+sdp_mini/src/drv/battery.c:264://Under charging the charging pile: check whether it is off the charging pile, and remove the charging pile to change the charging status.
+sdp_mini/src/drv/battery.c:274://Not charging the charging post: detecting whether it is off the charging post, inserting changes the charging state of the charging post
+sdp_mini/src/drv/battery.c:283://Is it in DC power state?
+sdp_mini/src/drv/battery.c:285://Under DC power charging: detect whether the DC power is unplugged, and remove the DC power state.
+sdp_mini/src/drv/battery.c:287://Anti-shake
+sdp_mini/src/drv/battery.c:295://Not charging DC power: Check if DC power is inserted, insert to change DC power charging status
+sdp_mini/src/drv/beep.c:36:* Buzzer initialization function
+sdp_mini/src/drv/beep.c:73:* Buzzer enable function
+sdp_mini/src/drv/beep.c:85:* Buzzer disable function
+sdp_mini/src/drv/beep.c:97:* Buzzer open function
+sdp_mini/src/drv/beep.c:104:* Buzzer off function
+sdp_mini/src/drv/beep.c:111://High frequency sound
+sdp_mini/src/drv/beep.c:113:* Buzzer PWM frequency setting function
+sdp_mini/src/drv/beep.c:120:* Buzzer PWM pulse width setting function
+sdp_mini/src/drv/beep.c:127:* Buzzer powers up the specific vocal function
+sdp_mini/src/drv/beep.c:143:* Buzzer arbitrary sound function
+sdp_mini/src/drv/beep.c:155:* Buzzer delay off function
+sdp_mini/src/drv/bump.c:34:* Collision detection pin initialization function
+sdp_mini/src/drv/bump.c:47:* Get collision state information function
+sdp_mini/src/drv/bump.c:68:* Collision occurrence decision function
+sdp_mini/src/drv/ctrl_bus_cmd.h:86://Protocol message definition
+sdp_mini/src/drv/ctrl_bus_cmd.h:173://Each bit represents the status of a bump sensor and supports up to 8
+sdp_mini/src/drv/distir.c:34://Unit: hz
+sdp_mini/src/drv/distir.c:35://Unit: ms
+sdp_mini/src/drv/distir.c:36://Drop determination threshold
+sdp_mini/src/drv/distir.c:39://Front infrared duty cycle
+sdp_mini/src/drv/distir.c:40://Bottom infrared duty cycle
+sdp_mini/src/drv/distir.c:42://Unit: mm
+sdp_mini/src/drv/distir.c:100:* Infrared ranging initialization function
+sdp_mini/src/drv/distir.c:109:* Infrared ranging processing function
+sdp_mini/src/drv/distir.c:138:* Obtain infrared ranging data function
+sdp_mini/src/drv/distir.c:145:* Infrared ranging PWM transmission initialization function
+sdp_mini/src/drv/distir.c:204:* Infrared ranging ADC wheel training sampling function
+sdp_mini/src/drv/distir.c:209://Wait for the infrared PWM transmission time and then sample. Generally, PWM is issued after the background value is collected.
+sdp_mini/src/drv/distir.c:216://When sampling is possible, the ADC sampling channels are switched in turn, and each channel is an infrared receiving point.
+sdp_mini/src/drv/distir.c:225://End of sampling, save the sampled value
+sdp_mini/src/drv/distir.c:228://Sample and store background ADC values
+sdp_mini/src/drv/distir.c:231://Sampling and storing ranging values
+sdp_mini/src/drv/distir.c:244://One round of sampling ends, if the background sampling is over, an infrared PWM is sent to perform ranging.
+sdp_mini/src/drv/distir.c:252://One round of sampling ends, if it is the end of the ranging sampling, stop the infrared PWM, wait for the next round of background sampling
+sdp_mini/src/drv/distir.c:274:* Obtain the collision state function of infrared ranging
+sdp_mini/src/drv/distir.h:32://Infrared transmission related definition
+sdp_mini/src/drv/distir.h:40://Infrared reception related definition
+sdp_mini/src/drv/distir.h:72://Infrared sensor ID number definition
+sdp_mini/src/drv/drv_ctrlbus.c:39:* Fill in baseInfo, slamcore will want
+sdp_mini/src/drv/drv_ctrlbus.c:58:* Reserved
+sdp_mini/src/drv/drv_ctrlbus.c:75:* Get ctrlbus nCMD foot state function
+sdp_mini/src/drv/drv_ctrlbus.c:76:* Reserved
+sdp_mini/src/drv/drv_ctrlbus.c:83:* Get ctrlbus nCMD foot state busy function
+sdp_mini/src/drv/drv_ctrlbus.c:84:* Reserved
+sdp_mini/src/drv/gpio.c:5:*Define a structure of type GPIO_InitTypeDef*/
+sdp_mini/src/drv/gpio.c:7:*Turn on the peripheral clock of GPIOC*/
+sdp_mini/src/drv/gpio.c:9:*Select the GPIOC pin to be controlled*/
+sdp_mini/src/drv/gpio.c:11:*Set the pin mode to universal push-pull output*/
+sdp_mini/src/drv/gpio.c:13:*Set the pin rate to 50MHz */
+sdp_mini/src/drv/gpio.c:15:*Call the library function to initialize GPIOC */
+sdp_mini/src/drv/gpio.c:17:* Turn off all led lights*/
+sdp_mini/src/drv/homeir.c:126://External interrupt, need to enable AFIO clock
+sdp_mini/src/drv/homeir.c:127://Enable PORTA, PORTC clock
+sdp_mini/src/drv/homeir.c:328://Enable PORTB clock
+sdp_mini/src/drv/homeir.c:335://Pull up input
+sdp_mini/src/drv/homeir.c:340://Set counter auto reload value up to 10ms overflow
+sdp_mini/src/drv/homeir.c:341://Prescaler, 1M count frequency, 1us plus 1.
+sdp_mini/src/drv/homeir.c:342://Set the clock split: TDTS = Tck_tim
+sdp_mini/src/drv/homeir.c:345://Initialize TIMx based on specified parameters
+sdp_mini/src/drv/homeir.c:348://Rising edge capture
+sdp_mini/src/drv/homeir.c:350://Configure input crossover, no frequency division
+sdp_mini/src/drv/homeir.c:352://Initialize timer input capture channel
+sdp_mini/src/drv/homeir.c:360://Enable timer
+sdp_mini/src/drv/homeir.c:363://Preemptive priority
+sdp_mini/src/drv/homeir.c:364://Priority
+sdp_mini/src/drv/homeir.c:366://Initialize the peripheral NVIC register according to the parameters specified in NVIC_InitStruct
+sdp_mini/src/drv/homeir.c:368://Allow update interrupts, allowing CC2IE to capture interrupts
+sdp_mini/src/drv/homeir.c:407://Rising edge capture
+sdp_mini/src/drv/homeir.c:416://Falling edge capture
+sdp_mini/src/drv/homeir.c:422://Reading the CCR1 can also clear the CC1IF flag.
+sdp_mini/src/drv/homeir.c:451://Move one left.
+sdp_mini/src/drv/homeir.c:452://Received 0
+sdp_mini/src/drv/homeir.c:457://Move one left.
+sdp_mini/src/drv/homeir.c:458://Received 1
+sdp_mini/src/drv/homeir.c:460://Get the information of the button key value increase 2500 is the standard value 2.5ms
+sdp_mini/src/drv/homeir.c:464://Normally, the boot code will not be obtained here.
+sdp_mini/src/drv/homeir.c:481://Rising edge capture
+sdp_mini/src/drv/homeir.c:490://Falling edge capture
+sdp_mini/src/drv/homeir.c:496://Reading the CCR1 can also clear the CC1IF flag.
+sdp_mini/src/drv/homeir.c:525://Move one left.
+sdp_mini/src/drv/homeir.c:526://Received 0
+sdp_mini/src/drv/homeir.c:531://Move one left.
+sdp_mini/src/drv/homeir.c:532://Received 1
+sdp_mini/src/drv/homeir.c:534://Get the information of the button key value increase 2500 is the standard value 2.5ms
+sdp_mini/src/drv/homeir.c:538://Normally, the boot code will not be obtained here.
+sdp_mini/src/drv/homeir.c:555://Rising edge capture
+sdp_mini/src/drv/homeir.c:564://Falling edge capture
+sdp_mini/src/drv/homeir.c:570://Reading the CCR1 can also clear the CC1IF flag.
+sdp_mini/src/drv/homeir.c:599://Move one left.
+sdp_mini/src/drv/homeir.c:600://Received 0
+sdp_mini/src/drv/homeir.c:605://Move one left.
+sdp_mini/src/drv/homeir.c:606://Received 1
+sdp_mini/src/drv/homeir.c:608://Get the information of the button key value increase 2500 is the standard value 2.5ms
+sdp_mini/src/drv/homeir.c:612://Normally, the boot code will not be obtained here.
+sdp_mini/src/drv/homeir.c:642://Rising edge capture
+sdp_mini/src/drv/homeir.c:650://Falling edge capture
+sdp_mini/src/drv/homeir.c:656://Reading the CCR1 can also clear the CC1IF flag.
+sdp_mini/src/drv/homeir.c:673://Move one left.
+sdp_mini/src/drv/homeir.c:674://Received 0
+sdp_mini/src/drv/homeir.c:678://Move one left.
+sdp_mini/src/drv/homeir.c:679://Received 1
+sdp_mini/src/drv/homeir.c:681://Get the information of the button key value increase 2500 is the standard value 2.5ms
+sdp_mini/src/drv/motor.c:72://Cumulative encoder value of the travel motor
+sdp_mini/src/drv/motor.c:77://Encoder value during the last detla time
+sdp_mini/src/drv/motor.c:78://The speed value of the last detla time
+sdp_mini/src/drv/motor.c:84://Walking motor direction
+sdp_mini/src/drv/motor.c:85://Travel motor speed
+sdp_mini/src/drv/motor.c:280:* Left and right walking motor initialization function
+sdp_mini/src/drv/motor.c:294:* Turn on the motor power. */
+sdp_mini/src/drv/motor.c:344:* Left travel motor encoder interrupt function
+sdp_mini/src/drv/motor.c:345:* External interrupt
+sdp_mini/src/drv/motor.c:357:* Right travel motor encoder interrupt function
+sdp_mini/src/drv/motor.c:358:* External interrupt
+sdp_mini/src/drv/motor.c:370:* Left and right walking motor encoder initialization function
+sdp_mini/src/drv/motor.c:371:* External interrupt reception, double edge trigger
+sdp_mini/src/drv/motor.c:398:* Left and right walking motor encoder initialization function
+sdp_mini/src/drv/motor.c:413:* Refresh the mileage data function of the traveling motor
+sdp_mini/src/drv/motor.c:420://Critical resource protection
+sdp_mini/src/drv/motor.c:421://Get the encoder data during this time
+sdp_mini/src/drv/motor.c:444://Prevent division by zero
+sdp_mini/src/drv/motor.c:447://Calculate the speed during this period based on the encoder data during this time, ie the current speed
+sdp_mini/src/drv/motor.c:466:* Calculate the cumulative mileage function of the left travel motor
+sdp_mini/src/drv/motor.c:467:* Unit: mm
+sdp_mini/src/drv/motor.c:474:* Calculate the cumulative mileage function of the right travel motor
+sdp_mini/src/drv/motor.c:475:* Unit: mm
+sdp_mini/src/drv/motor.c:497:* Calculate the current speed function of the left travel motor
+sdp_mini/src/drv/motor.c:498:* Unit: mm/s
+sdp_mini/src/drv/motor.c:505:* Calculate the current speed function of the right travel motor
+sdp_mini/src/drv/motor.c:506:* Unit: mm/s
+sdp_mini/src/drv/motor.c:519://When the set speed is 0, the travel motor is stopped immediately.
+sdp_mini/src/drv/motor.c:525://If the direction changes, stop the motor first.
+sdp_mini/src/drv/motor.c:555://Set the PWM duty value calculated by the PID
+sdp_mini/src/drv/motor.c:559:* Left and right walking motor speed control function
+sdp_mini/src/drv/motor.c:568:* Set the left and right motor speed, unit: mm / s
+sdp_mini/src/drv/motor.c:576:* Get the left motor speed in mm/s
+sdp_mini/src/drv/motor.c:583:* Get the right motor speed in mm/s
+sdp_mini/src/drv/motor.c:590:* The travel motor stops and waits for a function
+sdp_mini/src/drv/motor.c:591:* Reserved
+sdp_mini/src/drv/motor.c:604:* Travel motor stop function
+sdp_mini/src/drv/motor.c:612:* Whether the robot detects the initialization function on the ground
+sdp_mini/src/drv/motor.c:624:* Whether the robot is detecting the function on the ground
+sdp_mini/src/drv/motor.c:636:* Side brush motor initialization function
+sdp_mini/src/drv/motor.c:648:* Travel motor speed control and feedback coding detection function
+sdp_mini/src/drv/motor.c:657://Timing acquisition of feedback code values
+sdp_mini/src/drv/motor.c:658://Speed ​​control
+sdp_mini/src/drv/motor.c:696:* Speed ​​stall detection
+sdp_mini/src/drv/motor.c:740:* Get blocked mapping into collision state
+sdp_mini/src/drv/motor.c:755:* Get locked state
+sdp_mini/src/drv/motor.h:130://Side brush motor pin definition
+sdp_mini/src/drv/motor.h:136://Landing detection related
+sdp_mini/src/drv/motor.h:141://Walking motor speed control frequency: 60hz
+sdp_mini/src/drv/serial_channel.c:37://Receive buffer area of ​​serial channel
+sdp_mini/src/drv/serial_channel.c:41:* Serial port interrupt callback function
+sdp_mini/src/drv/serial_channel.c:42:* This function is called in the serial port receive interrupt.
+sdp_mini/src/drv/serial_channel.c:53:* Register upper layer protocol function
+sdp_mini/src/drv/serial_channel.c:54:* Specifies the corresponding upper layer protocol under the serial port channel, such as interchip
+sdp_mini/src/drv/serial_channel.c:61:* Serial channel setting data to send buffer function
+sdp_mini/src/drv/serial_channel.c:62:* Call the lowermost ring send buffer to cache
+sdp_mini/src/drv/serial_channel.c:69:* Serial channel send function
+sdp_mini/src/drv/serial_channel.c:70:* Calling the underlying send function to send all the data in the ring buffer
+sdp_mini/src/drv/serial_channel.c:77:* Serial port initialization function
+sdp_mini/src/drv/serial_channel.c:78:* Specifies the receive buffer, receives callbacks for interrupts, etc.
+sdp_mini/src/drv/serial_channel.c:100:* Serial channel shutdown function
+sdp_mini/src/drv/serial_channel.c:101:* Unbind interrupt receive callback function and uart corresponding to the serial port
+sdp_mini/src/drv/serial_channel.c:109:* Get the current serial channel function
+sdp_mini/src/drv/watchdog.c:33:* Watchdog enable function
+sdp_mini/src/drv/watchdog.c:34:* Open the watchdog
+sdp_mini/src/drv/watchdog.c:47:* Watchdog disable function
+sdp_mini/src/drv/watchdog.c:48:* Close the watchdog
+sdp_mini/src/drv/watchdog.c:57:* Feeding dog function
+sdp_mini/src/hwconf.c:39:* System clock setting function, time: 1ms
+sdp_mini/src/hwconf.c:65:* Interrupt controller configuration function
+sdp_mini/src/main.c:78:* Initialize board-level peripheral functions
+sdp_mini/src/main.c:83://Initialize debug serial port 2
+sdp_mini/src/main.c:88://Initialize the serial port 1 communicating with slamcore
+sdp_mini/src/main.c:89://Bind the serial port to the interchip protocol.
+sdp_mini/src/main.c:90://Initialize battery power and charge related
+sdp_mini/src/main.c:91://Initialize the buzzer for various audible prompts
+sdp_mini/src/main.c:92://Initialize ctrlbus related
+sdp_mini/src/main.c:93://Initialize IR ranging related, including front and bottom 4 infrared (below the measurement)
+sdp_mini/src/main.c:94://Initialize IR ranging related, including 3 Homeir
+sdp_mini/src/main.c:96://Initialize two-way travel motor, the output speed resolution is -1000 ~ 1000
+sdp_mini/src/main.c:97://Initialize the encoder on the two-way motor, interrupt input
+sdp_mini/src/main.c:98://Speed ​​setting left: 0mm/s Right: 0mm/s
+sdp_mini/src/main.c:99://Initialize whether the detection pin on the ground is used to judge whether the unit is on the ground or overhead.
+sdp_mini/src/main.c:100://Initialize the collision detection foot
+sdp_mini/src/main.c:113:* Keep the decision function with the slamcore connection
+sdp_mini/src/main.c:124://Stop walking when disconnected from slamcore
+sdp_mini/src/main.c:137:* Turn off device functions
+sdp_mini/src/main.c:138:* Here you can turn off some peripherals, depending on the situation.
+sdp_mini/src/main.c:149:* Module loop handler
+sdp_mini/src/main.c:167:* Failure mode handler
+sdp_mini/src/main.c:169://Fault mode processing, here you can shut down, shut down, etc., depending on the specific situation
+sdp_mini/src/main.c:180:* Indicator heartbeat function
+sdp_mini/src/main.c:251:* Main loop function
+sdp_mini/src/main.c:256://Listen for interchip protocol messages from slamcore
+sdp_mini/src/main.c:258://Respond to interchip protocol messages from slamcore
+sdp_mini/src/main.c:261://Processing individual function modules
+sdp_mini/src/main.c:266:* Main program function
+sdp_mini/src/main.c:270://Set the fault handling function
+sdp_mini/src/main.c:271://Waiting for the power supply to stabilize
+sdp_mini/src/main.c:274://All peripheral initialization
+sdp_mini/src/main.c:278://Start sounding
+sdp_mini/src/request_handler.c:350:* Respond to the interchip protocol processing function
+sdp_mini/src/request_handler.c:351:* Mainly dealing with chassis control messages
+sdp_mini/src/request_handler.c:371:* Respond to the interchip protocol processing function
+sdp_mini/src/request_handler.c:372:* Mainly processing ctrl bus user messages
+sdp_mini/src/request_handler.c:390:* Alarm heartbeat function
+sdp_mini/src/request_handler.c:391:* Mainly to handle alarm information
+sdp_mini/src/utils/filters.c:35:* Average filter function
+sdp_mini/src/utils/filters.c:36:* Put new data into the filter and average
+sdp_mini/src/utils/filters.c:37:* Data type: unsigned short
+sdp_mini/src/utils/filters.c:51:* Average filter function
+sdp_mini/src/utils/filters.c:52:* Put new data into the filter and average
+sdp_mini/src/utils/filters.c:53:* Data type: short
+sdp_mini/src/utils/filters.c:67:* Average filter function
+sdp_mini/src/utils/filters.c:68:* Put new data into the filter and average
+sdp_mini/src/utils/filters.c:69:* Data type: unsigned int

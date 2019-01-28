@@ -1,0 +1,291 @@
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:47:* 系统定时器节拍中断
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:48:* 节拍:1ms
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:83:* 获取毫秒总累计数
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:84:* 单位:ms
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:94:* 获取微秒总累计数
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:95:* 单位:us
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:118:* 不可打断的延时函数
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:119:* 延时单位:ms
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:128:* 可打断的延时函数
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:129:* 延时单位:ms
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:153:* 读取ADC采样值函数
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:161:* 等待ADC采样完成函数
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:170:* 获得芯片温度函数
+infra_pub/arch/infra_stm32/32f10x/boarddrv.c:171:* 预留
+infra_pub/arch/infra_stm32/32f10x/softdelay.c:41:* 微秒级延时矫正函数
+infra_pub/arch/infra_stm32/32f10x/softdelay.c:55:* 微秒级延时函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:35:* 串口发送缓存区定义
+infra_pub/arch/infra_stm32/32f10x/usart.c:50:* 串口接收回调函数定义
+infra_pub/arch/infra_stm32/32f10x/usart.c:64:* 串口接收环形缓存区定义
+infra_pub/arch/infra_stm32/32f10x/usart.c:86:* 获取串口号函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:103:* 获取串口缓存区索引函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:127:* 获取串口DMA通道函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:150:* 串口发送等待内联函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:188:* 串口关闭函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:189:* 释放串口和绑定的DMA通道
+infra_pub/arch/infra_stm32/32f10x/usart.c:208:* 串口打开函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:209:* 绑定DMA通道用于发送
+infra_pub/arch/infra_stm32/32f10x/usart.c:262:* 串口发送等待函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:273:* 串口发送数据设置函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:295:* 串口发送数据函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:296:* 将串口发送缓存区中数据全发出去
+infra_pub/arch/infra_stm32/32f10x/usart.c:315:* 串口发送函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:327:* 串口发送单个字符函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:334:* 串口清空接收缓存区函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:346:* 串口是否有接收数据判定函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:358:* 串口接收获取数据函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:372:* 串口接收获取单个字符函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:389:* 设置串口中断接收回调函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:400:* 获取串口中断接收回调函数
+infra_pub/arch/infra_stm32/32f10x/usart.c:442:* 默认串口中断接收回调函数
+sdp_mini/src/boarddef.h:35://串口发送缓存区大小
+sdp_mini/src/bump_monitor.c:47:* 离开阻塞状态函数
+sdp_mini/src/bump_monitor.c:54:* 进入阻塞状态函数
+sdp_mini/src/bump_monitor.c:61://进入阻塞时，急停
+sdp_mini/src/bump_monitor.c:65:* 阻塞状态初始化函数
+sdp_mini/src/bump_monitor.c:77:* 碰撞检测处理函数
+sdp_mini/src/bump_monitor.c:91:* 设定速度的合法性判断函数
+sdp_mini/src/bump_monitor.c:92:* 具体是根据当前的碰撞状态
+sdp_mini/src/drv/battery.c:36://单位：ms
+sdp_mini/src/drv/battery.c:37://单位：ms
+sdp_mini/src/drv/battery.c:60:* 电池容量ADC检测初始化函数
+sdp_mini/src/drv/battery.c:72:* 获取电池电压函数
+sdp_mini/src/drv/battery.c:73:* 返回电压值，单位：mV
+sdp_mini/src/drv/battery.c:85:* 获取电池容量百分比函数
+sdp_mini/src/drv/battery.c:86:* 返回百分比0-100%
+sdp_mini/src/drv/battery.c:93:* 电池充电电平检测初始化函数
+sdp_mini/src/drv/battery.c:120:* 电池充电状态检测函数
+sdp_mini/src/drv/battery.c:121:* 返回正在充电或不在充电状态
+sdp_mini/src/drv/battery.c:132:* 获取电池DC电源插头充电状态函数
+sdp_mini/src/drv/battery.c:139:* 获取电池充电桩充电状态函数
+sdp_mini/src/drv/battery.c:210:* 电池相关初始化函数
+sdp_mini/src/drv/battery.c:211:* 初始化电池容量检测
+sdp_mini/src/drv/battery.c:212:* 初始化电池充电检测
+sdp_mini/src/drv/battery.c:220:* 电池相关模块函数
+sdp_mini/src/drv/battery.c:221:* 充电状态的判定等
+sdp_mini/src/drv/battery.c:243://检测电池容量及计算百分比
+sdp_mini/src/drv/battery.c:262://是否处在充电桩充电状态
+sdp_mini/src/drv/battery.c:264://在充电桩充电下：检测是否脱离充电桩，拔出则更改充电桩充电状态
+sdp_mini/src/drv/battery.c:274://不在充电桩充电下：检测是否脱离充电桩，插入则更改充电桩充电状态
+sdp_mini/src/drv/battery.c:283://是否处在DC电源充电状态
+sdp_mini/src/drv/battery.c:285://在DC电源充电下：检测是否拔出DC电源，拔出则更改DC电源充电状态
+sdp_mini/src/drv/battery.c:287://防抖动
+sdp_mini/src/drv/battery.c:295://不在DC电源充电下：检测DC电源是否插入，插入则更改DC电源充电状态
+sdp_mini/src/drv/beep.c:36:* 蜂鸣器初始化函数
+sdp_mini/src/drv/beep.c:73:* 蜂鸣器使能函数
+sdp_mini/src/drv/beep.c:85:* 蜂鸣器禁止函数
+sdp_mini/src/drv/beep.c:97:* 蜂鸣器打开函数
+sdp_mini/src/drv/beep.c:104:* 蜂鸣器关闭函数
+sdp_mini/src/drv/beep.c:111://高频发声
+sdp_mini/src/drv/beep.c:113:* 蜂鸣器PWM频率设置函数
+sdp_mini/src/drv/beep.c:120:* 蜂鸣器PWM脉宽设置函数
+sdp_mini/src/drv/beep.c:127:* 蜂鸣器上电特定发声函数
+sdp_mini/src/drv/beep.c:143:* 蜂鸣器任意发声函数
+sdp_mini/src/drv/beep.c:155:* 蜂鸣器延时关闭函数
+sdp_mini/src/drv/bump.c:34:* 碰撞检测脚初始化函数
+sdp_mini/src/drv/bump.c:47:* 获取碰撞状态信息函数
+sdp_mini/src/drv/bump.c:68:* 碰撞发生判定函数
+sdp_mini/src/drv/ctrl_bus_cmd.h:86://协议报文定义
+sdp_mini/src/drv/ctrl_bus_cmd.h:173://每一位代表一个bump传感器的状态，最多支持8个
+sdp_mini/src/drv/distir.c:34://单位：hz
+sdp_mini/src/drv/distir.c:35://单位：ms
+sdp_mini/src/drv/distir.c:36://跌落判定阈值
+sdp_mini/src/drv/distir.c:39://前红外占空比
+sdp_mini/src/drv/distir.c:40://底下红外占空比
+sdp_mini/src/drv/distir.c:42://单位：mm
+sdp_mini/src/drv/distir.c:100:* 红外测距初始化函数
+sdp_mini/src/drv/distir.c:109:* 红外测距处理函数
+sdp_mini/src/drv/distir.c:138:* 获得红外测距数据函数
+sdp_mini/src/drv/distir.c:145:* 红外测距PWM发送初始化函数
+sdp_mini/src/drv/distir.c:204:* 红外测距ADC轮训采样函数
+sdp_mini/src/drv/distir.c:209://等待红外PWM发送时间，再进行采样。一般是在采背景值之后发出PWM
+sdp_mini/src/drv/distir.c:216://可以进行采样时，则轮流切换ADC采样通道，每个通道即是红外接收点
+sdp_mini/src/drv/distir.c:225://采样结束，进行采样值的保存
+sdp_mini/src/drv/distir.c:228://采样、存储背景ADC值
+sdp_mini/src/drv/distir.c:231://采样、存储测距值
+sdp_mini/src/drv/distir.c:244://一轮采样结束，如果是背景采样结束则发红外PWM，进行测距
+sdp_mini/src/drv/distir.c:252://一轮采样结束，如果是测距采样结束则停止发红外PWM，等待下轮背景采样
+sdp_mini/src/drv/distir.c:274:* 获得红外测距的碰撞状态函数
+sdp_mini/src/drv/distir.h:32://红外发送相关定义
+sdp_mini/src/drv/distir.h:40://红外接收相关定义
+sdp_mini/src/drv/distir.h:72://红外传感器ID号定义
+sdp_mini/src/drv/drv_ctrlbus.c:39:* 填充baseInfo，slamcore会要
+sdp_mini/src/drv/drv_ctrlbus.c:58:* 预留
+sdp_mini/src/drv/drv_ctrlbus.c:75:* 获取ctrlbus nCMD脚状态函数
+sdp_mini/src/drv/drv_ctrlbus.c:76:* 预留
+sdp_mini/src/drv/drv_ctrlbus.c:83:* 获取ctrlbus nCMD脚状态忙函数
+sdp_mini/src/drv/drv_ctrlbus.c:84:* 预留
+sdp_mini/src/drv/gpio.c:5:*定义一个GPIO_InitTypeDef类型的结构体 */
+sdp_mini/src/drv/gpio.c:7:*开启GPIOC的外设时钟 */
+sdp_mini/src/drv/gpio.c:9:*选择要控制的GPIOC引脚 */
+sdp_mini/src/drv/gpio.c:11:*设置引脚模式为通用推挽输出 */
+sdp_mini/src/drv/gpio.c:13:*设置引脚速率为50MHz */
+sdp_mini/src/drv/gpio.c:15:*调用库函数，初始化GPIOC */
+sdp_mini/src/drv/gpio.c:17:* 关闭所有led灯 */
+sdp_mini/src/drv/homeir.c:126://外部中断，需要使能AFIO时钟
+sdp_mini/src/drv/homeir.c:127://使能PORTA,PORTC时钟
+sdp_mini/src/drv/homeir.c:328://使能PORTB时钟 
+sdp_mini/src/drv/homeir.c:335://上拉输入 
+sdp_mini/src/drv/homeir.c:340://设定计数器自动重装值 最大10ms溢出  
+sdp_mini/src/drv/homeir.c:341://预分频器,1M的计数频率,1us加1.	   
+sdp_mini/src/drv/homeir.c:342://设置时钟分割:TDTS = Tck_tim
+sdp_mini/src/drv/homeir.c:345://根据指定的参数初始化TIMx
+sdp_mini/src/drv/homeir.c:348://上升沿捕获
+sdp_mini/src/drv/homeir.c:350://配置输入分频,不分频 
+sdp_mini/src/drv/homeir.c:352://初始化定时器输入捕获通道
+sdp_mini/src/drv/homeir.c:360://使能定时器
+sdp_mini/src/drv/homeir.c:363://先占优先级
+sdp_mini/src/drv/homeir.c:364://从优先级
+sdp_mini/src/drv/homeir.c:366://根据NVIC_InitStruct中指定的参数初始化外设NVIC寄存器	
+sdp_mini/src/drv/homeir.c:368://允许更新中断 ,允许CC2IE捕获中断
+sdp_mini/src/drv/homeir.c:407://上升沿捕获
+sdp_mini/src/drv/homeir.c:416://下降沿捕获
+sdp_mini/src/drv/homeir.c:422://读取CCR1也可以清CC1IF标志位
+sdp_mini/src/drv/homeir.c:451://左移一位.
+sdp_mini/src/drv/homeir.c:452://接收到0	   
+sdp_mini/src/drv/homeir.c:457://左移一位.
+sdp_mini/src/drv/homeir.c:458://接收到1
+sdp_mini/src/drv/homeir.c:460://得到按键键值增加的信息 2500为标准值2.5ms
+sdp_mini/src/drv/homeir.c:464://正常情况这里不会得到引导码
+sdp_mini/src/drv/homeir.c:481://上升沿捕获
+sdp_mini/src/drv/homeir.c:490://下降沿捕获
+sdp_mini/src/drv/homeir.c:496://读取CCR1也可以清CC1IF标志位
+sdp_mini/src/drv/homeir.c:525://左移一位.
+sdp_mini/src/drv/homeir.c:526://接收到0	   
+sdp_mini/src/drv/homeir.c:531://左移一位.
+sdp_mini/src/drv/homeir.c:532://接收到1
+sdp_mini/src/drv/homeir.c:534://得到按键键值增加的信息 2500为标准值2.5ms
+sdp_mini/src/drv/homeir.c:538://正常情况这里不会得到引导码
+sdp_mini/src/drv/homeir.c:555://上升沿捕获
+sdp_mini/src/drv/homeir.c:564://下降沿捕获
+sdp_mini/src/drv/homeir.c:570://读取CCR1也可以清CC1IF标志位
+sdp_mini/src/drv/homeir.c:599://左移一位.
+sdp_mini/src/drv/homeir.c:600://接收到0	   
+sdp_mini/src/drv/homeir.c:605://左移一位.
+sdp_mini/src/drv/homeir.c:606://接收到1
+sdp_mini/src/drv/homeir.c:608://得到按键键值增加的信息 2500为标准值2.5ms
+sdp_mini/src/drv/homeir.c:612://正常情况这里不会得到引导码
+sdp_mini/src/drv/homeir.c:642://上升沿捕获
+sdp_mini/src/drv/homeir.c:650://下降沿捕获
+sdp_mini/src/drv/homeir.c:656://读取CCR1也可以清CC1IF标志位
+sdp_mini/src/drv/homeir.c:673://左移一位.
+sdp_mini/src/drv/homeir.c:674://接收到0	   
+sdp_mini/src/drv/homeir.c:678://左移一位.
+sdp_mini/src/drv/homeir.c:679://接收到1
+sdp_mini/src/drv/homeir.c:681://得到按键键值增加的信息 2500为标准值2.5ms
+sdp_mini/src/drv/motor.c:72://行走电机的累计编码器值
+sdp_mini/src/drv/motor.c:77://最近一次 detla时间内的编码器值
+sdp_mini/src/drv/motor.c:78://最近一次 detla时间内的速度值
+sdp_mini/src/drv/motor.c:84://行走电机方向
+sdp_mini/src/drv/motor.c:85://行走电机速度
+sdp_mini/src/drv/motor.c:280:* 左右行走电机初始化函数
+sdp_mini/src/drv/motor.c:294:* 开启电机电源. */
+sdp_mini/src/drv/motor.c:344:* 左行走电机编码器中断函数
+sdp_mini/src/drv/motor.c:345:* 外部中断，双边沿触发
+sdp_mini/src/drv/motor.c:357:* 右行走电机编码器中断函数
+sdp_mini/src/drv/motor.c:358:* 外部中断，双边沿触发
+sdp_mini/src/drv/motor.c:370:* 左右行走电机编码器初始化函数
+sdp_mini/src/drv/motor.c:371:* 外部中断接收，双边沿触发
+sdp_mini/src/drv/motor.c:398:* 左右行走电机编码器初始化函数
+sdp_mini/src/drv/motor.c:413:* 刷新行走电机的里程数据函数
+sdp_mini/src/drv/motor.c:420://临界资源保护
+sdp_mini/src/drv/motor.c:421://得到这段时间内的编码器数据
+sdp_mini/src/drv/motor.c:444://防止除零
+sdp_mini/src/drv/motor.c:447://根据这段时间内的编码器数据计算这段时间内速度，即当前速度
+sdp_mini/src/drv/motor.c:466:* 计算左行走电机累计里程函数
+sdp_mini/src/drv/motor.c:467:* 单位：mm
+sdp_mini/src/drv/motor.c:474:* 计算右行走电机累计里程函数
+sdp_mini/src/drv/motor.c:475:* 单位：mm
+sdp_mini/src/drv/motor.c:497:* 计算左行走电机当前速度函数
+sdp_mini/src/drv/motor.c:498:* 单位：mm/s
+sdp_mini/src/drv/motor.c:505:* 计算右行走电机当前速度函数
+sdp_mini/src/drv/motor.c:506:* 单位：mm/s
+sdp_mini/src/drv/motor.c:519://设定速度为0，则立即停止行走电机
+sdp_mini/src/drv/motor.c:525://方向改变，则先停止行走电机
+sdp_mini/src/drv/motor.c:555://将PID计算得到的PWM占空比值设定
+sdp_mini/src/drv/motor.c:559:* 左右行走电机速度控制函数
+sdp_mini/src/drv/motor.c:568:* 设定左右电机速度，单位：mm/s
+sdp_mini/src/drv/motor.c:576:* 获得左电机速度，单位：mm/s
+sdp_mini/src/drv/motor.c:583:* 获得右电机速度，单位：mm/s
+sdp_mini/src/drv/motor.c:590:* 行走电机停止并等待函数
+sdp_mini/src/drv/motor.c:591:* 预留
+sdp_mini/src/drv/motor.c:604:* 行走电机停止函数
+sdp_mini/src/drv/motor.c:612:* 机器人是否在地上检测初始化函数
+sdp_mini/src/drv/motor.c:624:* 机器人是否在地上检测函数
+sdp_mini/src/drv/motor.c:636:* 边刷电机初始化函数
+sdp_mini/src/drv/motor.c:648:* 行走电机速度控制和反馈编码检测函数
+sdp_mini/src/drv/motor.c:657://定时获取反馈编码值
+sdp_mini/src/drv/motor.c:658://进而进行速度控制
+sdp_mini/src/drv/motor.c:696:* 速度堵转检测
+sdp_mini/src/drv/motor.c:740:* 获取堵转映射成碰撞状态
+sdp_mini/src/drv/motor.c:755:* 获取堵转状态
+sdp_mini/src/drv/motor.h:130://边刷电机管脚定义
+sdp_mini/src/drv/motor.h:136://落地检测相关
+sdp_mini/src/drv/motor.h:141://行走电机速度控制频率：60hz
+sdp_mini/src/drv/serial_channel.c:37://串口通道的接收缓存区
+sdp_mini/src/drv/serial_channel.c:41:* 串口中断回调函数
+sdp_mini/src/drv/serial_channel.c:42:* 串口接收中断里会调用该函数
+sdp_mini/src/drv/serial_channel.c:53:* 注册上层协议函数
+sdp_mini/src/drv/serial_channel.c:54:* 指定了该串口通道下对应的上层协议，如interchip
+sdp_mini/src/drv/serial_channel.c:61:* 串口通道设置数据到发送缓存区函数
+sdp_mini/src/drv/serial_channel.c:62:* 调用更底层的环形发送缓存区来缓存
+sdp_mini/src/drv/serial_channel.c:69:* 串口通道发送函数
+sdp_mini/src/drv/serial_channel.c:70:* 调用等底层的发送函数将环形缓存区的数据全部发送出去
+sdp_mini/src/drv/serial_channel.c:77:* 串口初始化函数
+sdp_mini/src/drv/serial_channel.c:78:* 指定了接收缓存区，接收中断的回调函数等
+sdp_mini/src/drv/serial_channel.c:100:* 串口通道关闭函数
+sdp_mini/src/drv/serial_channel.c:101:* 取消绑定的中断接收回调函数和该串口通道对应的uart
+sdp_mini/src/drv/serial_channel.c:109:* 获取当前串口通道函数
+sdp_mini/src/drv/watchdog.c:33:* 看门狗使能函数
+sdp_mini/src/drv/watchdog.c:34:* 打开看门狗
+sdp_mini/src/drv/watchdog.c:47:* 看门狗禁止函数
+sdp_mini/src/drv/watchdog.c:48:* 关闭看门狗
+sdp_mini/src/drv/watchdog.c:57:* 喂狗函数
+sdp_mini/src/hwconf.c:39:* 系统时钟设定函数，时间：1ms
+sdp_mini/src/hwconf.c:65:* 中断控制器配置函数
+sdp_mini/src/main.c:78:* 初始化板级外设函数
+sdp_mini/src/main.c:83://初始化调试串口2
+sdp_mini/src/main.c:88://初始化跟slamcore通讯的串口1
+sdp_mini/src/main.c:89://将该串口绑定上interchip协议
+sdp_mini/src/main.c:90://初始化电池电量、充电相关
+sdp_mini/src/main.c:91://初始化蜂鸣器，用于各种声音提示
+sdp_mini/src/main.c:92://初始化ctrlbus相关
+sdp_mini/src/main.c:93://初始化IR测距相关，包括正前下4个红外（测正下方）
+sdp_mini/src/main.c:94://初始化IR测距相关，包括3个 Homeir
+sdp_mini/src/main.c:96://初始化两路行走电机，输出的速度分辨率为-1000 ~ 1000
+sdp_mini/src/main.c:97://初始化两路行走电机上的编码器，中断输入
+sdp_mini/src/main.c:98://速度设定 左：0mm/s 右：0mm/s
+sdp_mini/src/main.c:99://初始化是否在地上的检测脚，用于判断本机时候在地上还是架空
+sdp_mini/src/main.c:100://初始化碰撞检测脚
+sdp_mini/src/main.c:113:* 与slamcore连接保持判定函数
+sdp_mini/src/main.c:124://与slamcore断开连接则停止行走
+sdp_mini/src/main.c:137:* 关闭设备函数
+sdp_mini/src/main.c:138:* 此处可以关闭一些外设，具体视情况而定
+sdp_mini/src/main.c:149:* 模块循环处理函数
+sdp_mini/src/main.c:167:* 故障模式处理函数
+sdp_mini/src/main.c:169://故障模式处理，此处可以关机、关中断等，视具体情况而定
+sdp_mini/src/main.c:180:* 指示灯心跳函数
+sdp_mini/src/main.c:251:* 主循环函数
+sdp_mini/src/main.c:256://侦听来自slamcore的interchip协议报文
+sdp_mini/src/main.c:258://响应来自slamcore的interchip协议报文
+sdp_mini/src/main.c:261://处理各个功能模块
+sdp_mini/src/main.c:266:* 主程序函数
+sdp_mini/src/main.c:270://设置故障处理函数
+sdp_mini/src/main.c:271://等待上电电源稳定
+sdp_mini/src/main.c:274://所有外设初始化
+sdp_mini/src/main.c:278://开机发声
+sdp_mini/src/request_handler.c:350:* 响应interchip协议处理函数
+sdp_mini/src/request_handler.c:351:* 主要是处理底盘控制报文
+sdp_mini/src/request_handler.c:371:* 响应interchip协议处理函数
+sdp_mini/src/request_handler.c:372:* 主要是处理ctrl bus用户报文
+sdp_mini/src/request_handler.c:390:* 报警心跳函数
+sdp_mini/src/request_handler.c:391:* 主要是处理报警信息
+sdp_mini/src/utils/filters.c:35:* 平均滤波函数
+sdp_mini/src/utils/filters.c:36:* 将新数据放入滤波器再求平均
+sdp_mini/src/utils/filters.c:37:* 数据类型：unsigned short
+sdp_mini/src/utils/filters.c:51:* 平均滤波函数
+sdp_mini/src/utils/filters.c:52:* 将新数据放入滤波器再求平均
+sdp_mini/src/utils/filters.c:53:* 数据类型：short
+sdp_mini/src/utils/filters.c:67:* 平均滤波函数
+sdp_mini/src/utils/filters.c:68:* 将新数据放入滤波器再求平均
+sdp_mini/src/utils/filters.c:69:* 数据类型：unsigned int
