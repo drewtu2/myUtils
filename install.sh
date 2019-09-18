@@ -74,8 +74,7 @@ printf "MYUTILS_HOME: $MYUTILS_HOME \n"
 ##############################################################################
 # Create soft links to all our dot files if they don't already exist.  
 ##############################################################################
-shopt -s dotglob                                    # Enable globbing .dotfiles
-for f in $MYUTILS_HOME/dot-files/*
+for f in $(find $MYUTILS_HOME/dot-files/ -type f -name ".**" ! -name "*.swp")
 do
     filename=$(basename "$f")
 
@@ -88,7 +87,6 @@ do
         ln -s $f ${HOME}/$filename
     fi 
 done
-shopt -u dotglob                                    # Disable globbing .dotfiles
 touch ${HOME}/.l_bashrc                                   # Make .l_bashrc exist
 
 ##############################################################################
