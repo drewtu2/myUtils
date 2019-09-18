@@ -1,3 +1,4 @@
+#!/bin/bash
 
 # From:
 # https://gist.github.com/indrayam/ebf53ba970241694865e1dd2b1313945
