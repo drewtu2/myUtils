@@ -1,0 +1,15 @@
+---
+- name: Include python package list
+  include_vars: vars/pip.yml
+  tags:
+    - pip
+
+- name: Manage python packages
+  pip:
+    name: "{{ item.key }}"
+    state: "{{ item.value.state | default('latest') }}"
+    executable: "{{ item.value.executable | default('pip3') }}"
+  with_dict: "{{pip}}"
+  tags:
+    - pip
+...

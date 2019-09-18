@@ -1,0 +1,16 @@
+---
+
+- name: Install brew packages
+  include_tasks: tasks/install_packages/install_brew_packages.yml
+  when: ansible_os_family == "Darwin"
+
+- name: Install apt packages 
+  include_tasks: tasks/install_packages/install_apt_packages.yml
+  become: true
+  when: ansible_os_family == "Debian"
+  tags: apt
+
+- name: Install python packages
+  include_tasks: tasks/install_packages/install_pip_packages.yml
+
+...
