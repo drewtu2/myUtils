@@ -1,0 +1,17 @@
+###############################################################################
+# OSx specific Tmux configs 
+# Ref: https://superuser.com/questions/539595/tmux-configuration-conditional-to-os
+###############################################################################
+
+# Notify we loaded os configs
+display "Loaded OSx tmux config"
+
+###############################################################################
+# Copy and Paste to system buffers
+# Requires 
+# - XClip on Linux
+# - PBCopy on OSx
+# Ref: https://www.freecodecamp.org/news/tmux-in-practice-integration-with-system-clipboard-bcd72c62ff7b/
+###############################################################################
+bind -T copy-mode-vi Enter send-keys -X copy-pipe-and-cancel "pbcopy"
+bind -T copy-mode-vi MouseDragEnd1Pane send-keys -X copy-pipe-and-cancel "pbcopy"
