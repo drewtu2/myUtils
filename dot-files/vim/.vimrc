@@ -5,7 +5,7 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 " Include Plugins
-source $MYUTILS_HOME/dot-files/vim/.plugins.vim
+source $MYUTILS_HOME/dot-files/vim/plugins.vim
 
 " Turn on syntax highlighting
 syntax on
@@ -43,9 +43,6 @@ set incsearch
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Map F2 to print the date in insert mode. 
 imap <F2> <C-R>=strftime("%A, %h %d, %Y")<CR>
-
-
-au BufNewFile,BufRead,BufEnter *.cpp,*.hpp set omnifunc=omni#cpp#complete#Main
 
 """
 " Map F3 to toggle paste mode. Paste mode prevents autoindent
