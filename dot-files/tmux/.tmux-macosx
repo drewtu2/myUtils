@@ -4,7 +4,7 @@
 ###############################################################################
 
 # Notify we loaded os configs
-display "Loaded OSx tmux config"
+# display "Loaded OSx tmux config"
 
 ###############################################################################
 # Copy and Paste to system buffers

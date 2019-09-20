@@ -10,6 +10,10 @@
 RED='\033[0;31m'        # Red
 GREEN='\033[0;32m'      # Green
 NC='\033[0m'            # No Color
+    
+if [ "$OS" = "Mac" ]; then
+    source $MYUTILS_HOME/dot-files/mac_terminal_config/set_colors.sh
+fi
 
 print_divider() {
     # Prints 40 *'s to be used as a divider
@@ -66,6 +70,10 @@ copy_ssh_key()
         cat ~/.ssh/id_rsa.pub | clip
     fi
 } 
+
+###############################################
+# Test OS 
+###############################################
 
 ###############################################
 # Other 

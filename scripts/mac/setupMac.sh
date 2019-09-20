@@ -11,7 +11,7 @@ brew tap caskroom/versions
 brew install git
 brew install tmux
 brew install wget
-brew install vim
+brew install macvim
 brew install python3
 
 # Install GNU core utilities (those that come with macOS are outdated)

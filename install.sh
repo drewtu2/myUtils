@@ -19,7 +19,7 @@ print_color() {
 ensure_directory() {
     # Make sure we're running this from the correct directory
     # $1: The directory we should be running this from
-    printf "Ensuring we're running from $1... "
+    printf "Ensuring we're running from $1... \n"
     if [ $(basename $(pwd)) != $1 ]
     then
         print_color "[ERROR]: Run in ${1}\n" ${RED}

@@ -16,7 +16,7 @@ elif [ -f $BASH_RC ]; then
 fi
 
 # Load all the configurations we want from the designated system dot-files...
-for DOTFILE in `find $MYUTILS_HOME/dot-files/system`
+for DOTFILE in $(find $MYUTILS_HOME/dot-files/system -type f -name ".**" ! -name "*.swp")
 do  
     [ -f "$DOTFILE" ] && source "$DOTFILE" #&& echo "Found file: $DOTFILE"
 done

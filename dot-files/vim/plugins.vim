@@ -30,7 +30,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'scrooloose/nerdtree'
 
 " Auto Complete
-Plugin 'valloric/youcompleteme'
+ Plugin 'valloric/youcompleteme'
 
 " Fuzzy file finding
 
