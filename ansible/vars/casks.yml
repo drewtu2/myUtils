@@ -1,0 +1,8 @@
+---
+casks:
+    docker:
+    pycharm:
+    teamviewer:
+    tmux:
+    vim:
+...

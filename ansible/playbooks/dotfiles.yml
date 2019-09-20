@@ -1,0 +1,10 @@
+---
+- name: Playbook to configure machines for Andrew
+  hosts: localhost
+  connection: local
+  
+  task: 
+    - include: tasks/packages.yml
+      tags:
+        - packages
+...

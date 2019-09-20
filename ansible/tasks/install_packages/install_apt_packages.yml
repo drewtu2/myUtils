@@ -1,0 +1,17 @@
+---
+- name: Include APT package list
+  include_vars: vars/apt.yml
+  tags:
+    - apt
+
+- name: Update/Upgrade apt
+  apt:
+    update_cache: true
+    upgrade: dist
+
+- name: Manage apt packages
+  apt:
+    name: "{{ item.key }}"
+    state: "{{ item.value.state | default('latest') }}"
+  with_dict: "{{apt}}"
+...
