@@ -34,6 +34,7 @@ alias gpl="git pull"
 alias gs="git status"
 alias gc="git commit"
 alias gcm="git commit -m"
+alias gb="git branch"
 
 # ROS commands
 alias scw="source devel/setup.bash; echo $ROS_PACKAGE_PATH"

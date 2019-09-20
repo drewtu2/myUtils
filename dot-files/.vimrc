@@ -77,6 +77,7 @@ set pastetoggle=<F3>
 " Set the filetype based on the file's extension, overriding any
 " " 'filetype' that has already been set
 au BufRead,BufNewFile *.launch,*.test set filetype=xml
+au BufRead,BufNewFile *.hpp set filetype=cpp
 
 " Fuzzy file searching
 " use :find <regex> and then tab through options
