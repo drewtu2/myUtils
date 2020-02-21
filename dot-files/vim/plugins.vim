@@ -21,6 +21,7 @@ Plugin 'tpope/vim-surround'
 " $MYUTILS_HOME/scripts
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
+
 source $MYUTILS_HOME/dot-files/vim/airline.vim
 
 " Get that bougee branch symbol. And also interact with git. 
@@ -28,6 +29,11 @@ Plugin 'tpope/vim-fugitive'
 
 " File Browser thing
 Plugin 'scrooloose/nerdtree'
+Plugin 'guns/xterm-color-table.vim'
+" More bougee symbols to use with nerdtree
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
+Plugin 'ryanoasis/vim-devicons'
+source $MYUTILS_HOME/dot-files/vim/nerdtree.vim
 
 " Auto Complete
  Plugin 'valloric/youcompleteme'
@@ -36,3 +42,4 @@ Plugin 'scrooloose/nerdtree'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
+
