@@ -16,12 +16,12 @@ syntax on
 set tabstop=4           " Width of a tab is 4 spaces (still interpretted as /t)
 set shiftwidth=4
 set softtabstop=4       " Sets the number of columns for a tab 
+set expandtab           " Expands tabs to spaces 
 
 " If this is a C(++) file, use c++ indents
 set cindent
 set cinoptions=g.5s,h.5s "Only indent 2 spaces for the scopes. 
 
-set expandtab           " Expands tabs to spaces 
 
 "set smarttab
 
@@ -29,6 +29,8 @@ set expandtab           " Expands tabs to spaces
 set cc=80
 " Turn on Numbered Lines
 set nu         
+
+set backspace=indent,eol,start
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Searching
@@ -58,3 +60,9 @@ au BufRead,BufNewFile *.hpp set filetype=cpp
 " use :find <regex> and then tab through options
 set path+=**
 set wildmenu
+
+" navigate panes easier
+nnoremap <C-J> <C-W><C-J>
+nnoremap <C-K> <C-W><C-K>
+nnoremap <C-L> <C-W><C-L>
+nnoremap <C-H> <C-W><C-H>
