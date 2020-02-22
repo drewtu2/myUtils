@@ -11,7 +11,6 @@ if [ $(uname) = "Darwin" ]; then
     . ./osx/setup-mac.sh
 elif [ $(uname) = "Linux" ]; then
     echo "Setting up ubuntu"
-    pwd
     . ./ubuntu/setup-ubuntu.sh
 fi
 
