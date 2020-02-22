@@ -10,6 +10,7 @@ if [ $(uname)  = "Darwin" ]; then
     ./osx/setup-mac.sh
 elif [ $(uname) = "Linux" ]; then
     ./ubuntu/setup-ubuntu.sh
+fi
 
 # Last action: activate dotfiles from repo 
 MAIN_DIR=$(dirname $(dirname "%0")) # Should give myUtils directory
