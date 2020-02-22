@@ -3,6 +3,7 @@
 # Import Functions
 # $1 the dir the functions live in 
 function import_functions {
+    DIR=$1
 	# iterate through the files in the 'functions' folder
 	for FUNCTION in $(dirname "$0")/$DIR/*; do
 		# skip directories
@@ -13,7 +14,8 @@ function import_functions {
 			continue
 		elif [[ -f $FUNCTION ]]; then
 			# source the function file
-			. $FUNCTION
+            echo $FUNCTION
+			source $FUNCTION
 		fi
 	done
 }

@@ -2,11 +2,11 @@
 # Inspired by: https://github.com/snwh/ubuntu-post-install
 
 # Trigger sudo so we have it. 
-sudo -v
+# sudo -v
 
 # Just update the OS related stuff.
-sudo apt-get -qq update
-sudo apt-get -qq upgrade
+#sudo apt-get -qq update
+#sudo apt-get -qq upgrade
 
 install_from_list "installing ubuntu packages" "ubuntu_install"
 
