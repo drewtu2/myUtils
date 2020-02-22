@@ -1,0 +1,37 @@
+#!/bin/bash
+
+# Install from list function
+#
+# ${1} = Name
+# ${2} = list-name
+
+function install_from_list() {
+    # echo_message header "Starting 'install_from_list' function..."
+    echo "Starting installation of ${1}..."
+    # Variables
+    LIST=$(dirname "$0")'/data/'${2}'.list'
+    for PACKAGE in $(cat $LIST); do
+        # If package is not installed
+        if [ $(check_package_installed $PACKAGE) != 0 ]; then
+            # Install package
+            echo "Package '$PACKAGE' is not installed. Installing..."
+            # Admin privileges
+            sudo apt install -y $PACKAGE
+            # Check if failed
+            if [[ $? != 0 ]]; then
+                echo "Error installing '$PACKAGE'."
+            fi
+        else
+            # Show already installed message
+            echo "Package '$PACKAGE' is installed."
+        fi
+    done
+    # Finished
+    echo "Installation of ${1} complete."
+}
+
+# Check dpkg for package installation status
+function check_package_installed() {
+    # query dpkg for install status and return a value
+    dpkg-query -W --showformat='${Status}\n' $@ | grep "install ok installed" &> /dev/null; echo $?
+}

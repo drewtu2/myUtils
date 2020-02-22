@@ -1,0 +1,24 @@
+#!/bin/bash
+
+# Ask the user a Yes/No question
+function ask_question() {
+    read -p "${1} (y/N) " choice
+    case "$choice" in
+        Y | y | Yes | YES | yes ) return 0; exit;;
+        N | n | No | NO | no ) return 1; exit;;
+        * ) return 2;;
+    esac
+}
+
+ensure_directory() {
+    # Make sure we're running this from the correct directory
+    # $1: The directory we should be running this from
+    printf "Ensuring we're running from $1... \n"
+    if [ $(basename $(pwd)) != $1 ]
+    then
+        print_color "[ERROR]: Run in ${1}\n" ${RED}
+        exit 1
+    else
+        print_color  "[SUCCESS]: Correct directory... beginning setup\n" ${GREEN}
+    fi
+}

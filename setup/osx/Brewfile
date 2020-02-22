@@ -1,0 +1,44 @@
+# see https://github.com/Homebrew/homebrew-bundle
+cask_args appdir: "/Applications"
+
+tap "homebrew/cask"
+
+######################################################################
+# App-Store programs via "mas"                                       #
+######################################################################
+brew "mas"
+
+
+######################################################################
+# The development, console and server stuff                          #
+######################################################################
+brew "git"
+brew "tmux"
+brew "wget"
+brew "macvim"
+brew "python3"
+
+# Install GNU core utilities (those that come with macOS are outdated)
+brew 'coreutils'
+
+
+######################################################################
+# Fonts                                                              #
+######################################################################
+tap "homebrew/cask-fonts"
+cask "font-menlo-for-powerline"
+cask "font-hack-nerd-font"
+
+######################################################################
+# Everyday tools / Cloud / Communication                             #
+######################################################################
+cask "vlc"
+cask "slack"
+cask "spotify"
+cask "dropbox"
+
+######################################################################
+# More fun stuff                                                     #
+######################################################################
+brew "ffmpeg"
+brew "youtube-dl"

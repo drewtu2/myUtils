@@ -3,37 +3,9 @@
 # This script installs myUtils into a new system
 # Should be run from the home directory of myUtils
 
-
-# Some colors for fancy prints
-RED='\033[0;31m'        # Red
-GREEN='\033[0;32m'      # Green
-NC='\033[0m'            # No Color
-
-print_color() {
-    # Prints a given string in a given color
-    # $1: The string to be printed
-    # $2: The given color
-    printf "${2}${1}${NC}"
-}
-
-ensure_directory() {
-    # Make sure we're running this from the correct directory
-    # $1: The directory we should be running this from
-    printf "Ensuring we're running from $1... \n"
-    if [ $(basename $(pwd)) != $1 ]
-    then
-        print_color "[ERROR]: Run in ${1}\n" ${RED}
-        exit 1
-    else
-        print_color  "[SUCCESS]: Correct directory... beginning setup\n" ${GREEN}
-    fi
-}
-
+source setup/functions/import_functions
+import_functions "setup/functions"
 ensure_directory "myUtils"
-source dot-files/system/.functions > /dev/null 2>&1
-
-
-# Print Header
 print_header "Installing myUtils"
 
 # Sets up environment as follows
@@ -87,6 +59,7 @@ do
         ln -s $f ${HOME}/$filename
     fi 
 done
+
 touch ${HOME}/.l_bashrc                                   # Make .l_bashrc exist
 
 ##############################################################################
