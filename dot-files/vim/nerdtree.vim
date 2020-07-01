@@ -19,3 +19,9 @@ autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isT
 " Show hidden files by default
 let NERDTreeShowHidden=1
 
+
+" Nerdtree Syntax Highlight
+let g:NERDTreeFileExtensionHighlightFullName = 0
+let g:NERDTreeExactMatchHighlightFullName = 0
+let g:NERDTreePatternMatchHighlightFullName = 0
+

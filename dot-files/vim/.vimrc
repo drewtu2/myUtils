@@ -26,7 +26,7 @@ set cinoptions=g.5s,h.5s "Only indent 2 spaces for the scopes.
 "set smarttab
 
 " Color Line 80 (helps keep consistent lines) 
-set cc=80
+set cc=100
 " Turn on Numbered Lines
 set nu         
 
@@ -57,6 +57,10 @@ au BufRead,BufNewFile *.launch,*.test set filetype=xml
 au BufRead,BufNewFile *.hpp set filetype=cpp
 
 au BufRead,BufNewFile *.md setlocal textwidth=80
+
+" Enable spell check on git commit messages and md files
+autocmd BufRead,BufNewFile *.md setlocal spell spelllang=en_us
+autocmd FileType gitcommit setlocal spell spelllang=en_us
 
 
 " Fuzzy file searching

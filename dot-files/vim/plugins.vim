@@ -5,9 +5,11 @@
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 set nocompatible "required
+set encoding=UTF-8
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.local/share/fonts
 
 call vundle#begin()
 " let Vundle manage Vundle, required
@@ -17,8 +19,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'
 
 " Wanna be a bougee status line btch
-" Make sure the powerline fonts are installed using the script in
-" $MYUTILS_HOME/scripts
+" Make sure to install and set a Nerd-font compatible font and set as terminal
+" font. 
+" See https://github.com/ryanoasis/nerd-fonts for more information. 
+" (Recommend to use Hack)
+" TODO (atu): Update install script to install. 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
@@ -36,7 +41,7 @@ Plugin 'ryanoasis/vim-devicons'
 source $MYUTILS_HOME/dot-files/vim/nerdtree.vim
 
 " Auto Complete
- Plugin 'valloric/youcompleteme'
+Plugin 'valloric/youcompleteme'
 
 " Fuzzy file finding
 
