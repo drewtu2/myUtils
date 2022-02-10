@@ -38,6 +38,14 @@ alias gb="git branch"
 alias gbr="git branch | grep -v "master" | xargs git branch -D"
 alias gdf="git diff"
 
+gppr() {
+    UPSTREAM=$1
+    ID=$2
+    BRANCHNAME=$3
+    git fetch $UPSTREAM pull/$ID/head:$BRANCHNAME
+    git checkout $BRANCHNAME
+}
+
 # ROS commands
 alias scw="source devel/setup.bash; echo $ROS_PACKAGE_PATH"
 alias cw="echo $ROS_PACKAGE_PATH"

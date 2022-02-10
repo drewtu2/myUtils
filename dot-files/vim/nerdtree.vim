@@ -6,7 +6,7 @@
 map <C-n> :NERDTreeToggle<CR>
 
 " Autostart NerdTree
-autocmd vimenter * NERDTree
+autocmd vimenter * NERDTree | wincmd p
 
 " Autostart Nerd tree if no files were selected
 autocmd StdinReadPre * let s:std_in=1

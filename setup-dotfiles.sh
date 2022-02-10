@@ -72,4 +72,8 @@ else
     source $STARTUP > /dev/null
 fi
 
+# idk where to put these. 
+./scripts/installVundle.sh
+./scripts/installPowerlineFonts.sh
+
 print_header "Finished running installation script..."

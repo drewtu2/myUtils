@@ -55,6 +55,8 @@ set pastetoggle=<F3>
 " " 'filetype' that has already been set
 au BufRead,BufNewFile *.launch,*.test set filetype=xml
 au BufRead,BufNewFile *.hpp set filetype=cpp
+au BufRead,BufNewFile *.Dockerfile set filetype=dockerfile
+au BufRead,BufNewFile *.dockerfile set filetype=dockerfile
 
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
@@ -73,3 +75,7 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Show tabs as characters. 
+set list
+set listchars=tab:>-

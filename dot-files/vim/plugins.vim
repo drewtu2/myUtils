@@ -42,8 +42,12 @@ source $MYUTILS_HOME/dot-files/vim/nerdtree.vim
 
 " Auto Complete
 Plugin 'valloric/youcompleteme'
+let g:ycm_confirm_extra_conf = 0
 
 " Fuzzy file finding
+
+" Vim Dockerfile
+Plugin 'ekalinin/Dockerfile.vim'
 
 call vundle#end()            " required
 filetype plugin indent on    " required
