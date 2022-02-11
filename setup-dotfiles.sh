@@ -75,5 +75,6 @@ fi
 # idk where to put these. 
 ./scripts/installVundle.sh
 ./scripts/installPowerlineFonts.sh
+vim +PluginInstall +qall
 
 print_header "Finished running installation script..."
