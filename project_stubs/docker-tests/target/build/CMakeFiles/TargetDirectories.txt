@@ -1,0 +1,8 @@
+/root/app/build/CMakeFiles/rebuild_cache.dir
+/root/app/build/CMakeFiles/edit_cache.dir
+/root/app/build/lru_cache/CMakeFiles/rebuild_cache.dir
+/root/app/build/lru_cache/CMakeFiles/edit_cache.dir
+/root/app/build/lru_cache/CMakeFiles/LruCache.dir
+/root/app/build/demo/CMakeFiles/rebuild_cache.dir
+/root/app/build/demo/CMakeFiles/edit_cache.dir
+/root/app/build/demo/CMakeFiles/helloDemo.dir

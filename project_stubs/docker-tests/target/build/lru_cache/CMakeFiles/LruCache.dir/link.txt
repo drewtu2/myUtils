@@ -1,0 +1,2 @@
+/usr/bin/ar qc libLruCache.a  CMakeFiles/LruCache.dir/lru_cache.cpp.o
+/usr/bin/ranlib libLruCache.a

@@ -1,0 +1,12 @@
+[
+{
+  "directory": "/root/app/build/lru_cache",
+  "command": "/usr/bin/c++   -I/root/app/lru_cache    -std=gnu++11 -o CMakeFiles/LruCache.dir/lru_cache.cpp.o -c /root/app/lru_cache/lru_cache.cpp",
+  "file": "/root/app/lru_cache/lru_cache.cpp"
+},
+{
+  "directory": "/root/app/build/demo",
+  "command": "/usr/bin/c++   -I/root/app/lru_cache    -std=gnu++11 -o CMakeFiles/helloDemo.dir/demo.cpp.o -c /root/app/demo/demo.cpp",
+  "file": "/root/app/demo/demo.cpp"
+}
+]

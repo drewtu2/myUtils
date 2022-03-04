@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../lru_cache/lru_cache.hpp
+list
+-
+unordered_map
+-
+assert.h
+-
+
+/root/app/demo/demo.cpp
+iostream
+-
+lru_cache.hpp
+/root/app/demo/lru_cache.hpp
+
