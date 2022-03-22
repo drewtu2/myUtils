@@ -1,22 +1,22 @@
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true
 [user]
-	name = Andrew Tu
-	email = drewtu2@yahoo.com
+    name = Andrew Tu
+    email = drewtu2@yahoo.com
 [core]
     editor = vim
     excludesfile = ~/.gitignore
 [push]
-    default = matching
+    default = simple
 [status]
     submodulesummary = 1
 
 # Add colors always!
 [color]
-      ui = auto
+    ui = auto
 [color "branch"]
       current = yellow reverse
         local = yellow

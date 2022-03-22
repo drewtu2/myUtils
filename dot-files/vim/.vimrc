@@ -79,3 +79,6 @@ nnoremap <C-H> <C-W><C-H>
 " Show tabs as characters. 
 set list
 set listchars=tab:>-
+
+" devicons: reasonable defaults from webinstall.dev/vim-devicons
+source ~/.vim/plugins/devicons.vim
