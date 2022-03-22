@@ -73,8 +73,8 @@ else
 fi
 
 # idk where to put these. 
-./scripts/installVundle.sh
-./scripts/installPowerlineFonts.sh
+./setup/installVundle.sh
+./setup/installPowerlineFonts.sh
 vim +PluginInstall +qall
 
 print_header "Finished running installation script..."
