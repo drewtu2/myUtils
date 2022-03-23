@@ -28,7 +28,7 @@ def main():
                     "%s %s\n" % (d.name, d.proplist['device.description']))
             index, _ = rofi.select("Select default sink", smap.keys(), select=1)
         else:
-            index == 0
+            index = 0
 
         if index == -1:
             return
@@ -42,7 +42,7 @@ def main():
         if index == -1:
           return
 
-        profile_mode = smap.keys()[index]
+        profile_mode = list(smap.keys())[index]
 
         print("Setting %s [%s] to %s" % (headset.proplist['device.description'], 
             headset.name, profile_mode))
