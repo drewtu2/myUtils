@@ -21,9 +21,11 @@ set $i3-config-home $MYUTILS_HOME/i3
 set $i3-display-swap-cmd $MYUTILS_HOME/i3/i3-display-swap.sh
 set $i3-status-config $MYUTILS_HOME/i3/i3-status.conf
 set $lockscreen-cmd $MYUTILS_HOME/i3/i3lock-blur.sh
+set $dunst-config $MYUTILS_HOME/i3/config_dunst
 
 set $audio-select-cmd $MYUTILS_HOME/scripts/rofi/rofi_audio_selector.py
 set $screenshot-cmd $MYUTILS_HOME/scripts/screen-2-clipboard.sh
+set $edit-screenshot-cmd flameshot gui
 
 set $teams-url teams.microsoft.com
 set $outlook-url https://outlook.office365.com/mail/
@@ -56,6 +58,7 @@ bar {
     status_command i3status --config $i3-status-config
     position top
     tray_output $dellc33 
+    tray_output $laptop
     tray_padding 5 
     font pango:DejaVu Sans Mono 10
 }
@@ -85,7 +88,7 @@ exec --no-startup-id copyq
 exec_always feh --bg-fill --no-fehbg $bg-image
 
 # Start the audio controls. make sure we unmute at start.
-exec --no-startup-id pulseaudio --start; pamixer -u
+# exec --no-startup-id pulseaudio --start; sleep 10; pamixer -u
 
 # Start picom (compositor)
 exec --no-startup-id picom --config $picom-config
@@ -97,6 +100,10 @@ exec --no-startup-id google-chrome --new-window $teams-url
 exec --no-startup-id google-chrome --new-window $outlook-url
 exec --no-startup-id slack
 exec --no-startup-id spotify
+
+# Notifications
+exec killall -q notify-osd
+exec --no-startup-id dunst -config ~/.i3/config_dunst
 
 
 ##################################################################################################
@@ -130,7 +137,7 @@ workspace $ws-media output $laptop
 workspace $ws-teams output $laptop
 workspace $ws-7 output $dellc33
 
-assign [class="Gnome-terminal"] $ws-term
+#assign [class="Gnome-terminal"] $ws-term
 assign [class="Slack"] $ws-comms
 assign [class="discord"] $ws-comms
 assign [class="Code"] $ws-code
@@ -142,7 +149,8 @@ for_window [class="Spotify"] move to workspace $ws-media
 # Always float these.
 for_window [window_role="About"] floating enable
 for_window [window_role="pop-up"] floating enable
-for_window [class=Pavucontrol|Blueman-manager|vlc] floating enable
+for_window [class=Pavucontrol|Blueman-manager|vlc] floating enable; move position mouse
+for_window [class=copyq] floating enable
 
 for_window [urgent=latest] focus
 
@@ -155,6 +163,7 @@ gaps inner 10
 ##################################################################################################
 # Key Configs bindings
 ##################################################################################################
+set $refresh_i3status killall -SIGUSR1 i3status
 
 bindsym Mod1+Tab workspace next
 bindsym Mod1+Shift+Tab workspace prev
@@ -164,7 +173,6 @@ bindsym $mod+space exec rofi -show drun
 bindsym $mod+Shift+a exec $audio-select-cmd
 
 # Use pactl to adjust volume in PulseAudio.
-set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -10% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
@@ -183,7 +191,7 @@ bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness 
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec i3-sensible-terminal -e tmux
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -277,7 +285,9 @@ bindsym $mod+Shift+r restart
 # Swap workspaces between two monitors. 
 bindsym $mod+Shift+s exec $i3-display-swap-cmd
 
+# Screenshots
 bindsym $mod+p exec $screenshot-cmd; exec "notify-send $screenshot-cmd"
+bindsym $mod+Shift+p exec $edit-screenshot-cmd
 
 bindsym $mod+Shift+x exec $lockscreen-cmd; exec "notify-send $lockscreen-cmd"
 
@@ -285,7 +295,9 @@ bindsym $mod+m exec google-chrome --new-window $teams-url
 
 bindsym $mod+question exec i3help
 
-bindsym $mod+shift+m exec xrandr --auto
+bindsym $mod+Shift+m exec xrandr --auto
+
+bindsym $mod+Shift+v exec copyq toggle
 
 ##################################################################################################
 # Modes
@@ -336,9 +348,6 @@ bindsym $mod+r mode $mode-resize
 # 
 # }
 
-# This mode is responsible for configuring audio settings.
-#
-# card 13 is the bluetooth audio driver found using pacmd list
 set $mode-exit "exit: [l]ogout, [r]eboot, [s]hutdown"
 mode  $mode-exit {
 
