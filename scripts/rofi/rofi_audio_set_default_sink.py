@@ -11,6 +11,12 @@ SINK_ALIASES = {
   'PCM2912A Audio Codec Analog Stereo': "PCM2912A Audio Codec Analog Stereo",
 }
 
+def name():
+  pulse = pulsectl.Pulse()
+  sinks = pulse.sink_list()
+  return "sink ({})".format(pulse.server_info().default_sink_name)
+
+
 def main():
   print("running set default sink")
   pulse = pulsectl.Pulse()

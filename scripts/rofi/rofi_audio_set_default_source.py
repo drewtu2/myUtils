@@ -11,6 +11,11 @@ SOURCE_ALIASES = {
   #'PCM2912A Audio Codec Analog Stereo': "PCM2912A Audio Codec Analog Stereo",
 }
 
+def name():
+  pulse = pulsectl.Pulse()
+  sinks = pulse.source_list()
+  return "source ({})".format(pulse.server_info().default_source_name)
+
 def main():
   pulse = pulsectl.Pulse()
   rofi = Rofi()

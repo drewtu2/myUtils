@@ -6,6 +6,17 @@
 from rofi import Rofi
 import pulsectl, sys
 
+def name():
+    with pulsectl.Pulse('local-smoser-pulse') as pulse:
+        devs = [d for d in pulse.card_list() if d.name.startswith('bluez')]
+        if len(devs) == 0:
+            connected = "disconnected" 
+        else:
+            headset = devs[0]
+            dev_name = headset.name
+            profile = headset.profile_active.name
+            connected = "{}/{}".format(dev_name, profile)
+    return "bluetooth ({})".format(connected);
 
 def main():
     smap = {'a2dp': 'a2dp_sink', 'headset': 'headset_head_unit', 'off': 'off'}
