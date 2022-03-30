@@ -14,7 +14,8 @@ SINK_ALIASES = {
 def name():
   pulse = pulsectl.Pulse()
   sinks = pulse.sink_list()
-  return "sink ({})".format(pulse.server_info().default_sink_name)
+  default_sink = pulse.get_sink_by_name(pulse.server_info().default_sink_name)
+  return "sink ({})".format(default_sink.description)
 
 
 def main():

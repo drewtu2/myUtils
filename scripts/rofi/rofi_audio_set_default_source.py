@@ -13,8 +13,9 @@ SOURCE_ALIASES = {
 
 def name():
   pulse = pulsectl.Pulse()
-  sinks = pulse.source_list()
-  return "source ({})".format(pulse.server_info().default_source_name)
+  sources = pulse.source_list()
+  default_source = pulse.get_source_by_name(pulse.server_info().default_source_name)
+  return "source ({})".format(default_source.description)
 
 def main():
   pulse = pulsectl.Pulse()

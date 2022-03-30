@@ -16,7 +16,7 @@ def name():
             dev_name = headset.name
             profile = headset.profile_active.name
             connected = "{}/{}".format(dev_name, profile)
-    return "bluetooth ({})".format(connected);
+    return "bt profile ({})".format(connected);
 
 def main():
     smap = {'a2dp': 'a2dp_sink', 'headset': 'headset_head_unit', 'off': 'off'}
